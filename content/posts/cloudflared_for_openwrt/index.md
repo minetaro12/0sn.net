@@ -19,7 +19,7 @@ readingTime = false
 
 [ここ](https://downloads.openwrt.org/)からターゲットのSDKをダウンロードして解凍する
 
-自分はGL-MT300N-V2で動かしたいので[https://archive.openwrt.org/releases/21.02.0/targets/ramips/mt76x8/openwrt-sdk-21.02.0-ramips-mt76x8_gcc-8.4.0_musl.Linux-x86_64.tar.xz](https://archive.openwrt.org/releases/21.02.0/targets/ramips/mt76x8/openwrt-sdk-21.02.0-ramips-mt76x8_gcc-8.4.0_musl.Linux-x86_64.tar.xz)をダウンロードした
+自分はGL-MT300N-V2で動かしたいので[これ](https://archive.openwrt.org/releases/21.02.0/targets/ramips/mt76x8/openwrt-sdk-21.02.0-ramips-mt76x8_gcc-8.4.0_musl.Linux-x86_64.tar.xz)をダウンロードした
 
 2\. リポジトリをクローン
 
@@ -29,7 +29,7 @@ readingTime = false
 
 次のコマンドを実行してパッケージをインストールする
 
-```
+```bash
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 ```
@@ -60,7 +60,7 @@ readingTime = false
 
 デーモン化する場合は`/root/.cloudflared`の中身を`/etc/cloudflared`にコピーする必要があります。
 
-```
+```bash
 #!/bin/sh /etc/rc.common
 
 START=99

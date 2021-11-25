@@ -2,22 +2,23 @@ baseurl = "https://new.minetaro12.com/"
 languageCode = "ja-JP"
 theme = "terminal"
 paginate = 5
+enableGitInfo = true
 
 [params]
   contentTypeName = "posts"
   themeColor = "blue"
   showMenuItems = 2
   fullWidthTheme = false
-  centerTheme = false
+  centerTheme = true
   favicon = "favicon.ico"
   showLastUpdated = true
 
 [languages]
   [languages.en]
     title = "minetaro12"
-    subtitle = "Hello"
+    subtitle = "Oさん"
     keywords = ""
-    copyright = "©2021 minetaro12"
+    copyright = "&copy;2021 minetaro12"
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
@@ -35,3 +36,8 @@ paginate = 5
         identifier = "links"
         name = "Links"
         url = "/links"
+
+      [[languages.en.menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags"
