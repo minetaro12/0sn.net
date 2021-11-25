@@ -2,6 +2,7 @@
 title: "Links"
 date: 2021-11-25T00:54:12+09:00
 draft: false
+comments: false
 ---
 
 [Twitter](https://twitter.com/1osan_x)

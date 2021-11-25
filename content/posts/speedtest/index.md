@@ -9,7 +9,9 @@ keywords = ["", ""]
 description = " "
 showFullContent = false
 readingTime = false
+comments = true
 +++
 
-下のリンクから計測できます  
+下のリンクから計測できます
+
 [https://minetaro12.com/speedtest](https://minetaro12.com/speedtest)

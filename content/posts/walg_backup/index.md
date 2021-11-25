@@ -9,6 +9,7 @@ keywords = ["", ""]
 description = " "
 showFullContent = false
 readingTime = false
+comments = true
 +++
 
 こちらのサイトを参考にしました。

@@ -9,6 +9,7 @@ keywords = ["", ""]
 description = " "
 showFullContent = false
 readingTime = false
+comments = true
 +++
 ※Ubuntu20.04LTSにて確認しました
 

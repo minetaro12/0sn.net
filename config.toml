@@ -3,6 +3,7 @@ languageCode = "ja-JP"
 theme = "terminal"
 paginate = 5
 enableGitInfo = true
+disqusShortname = "minetaro12"
 
 [params]
   contentTypeName = "posts"

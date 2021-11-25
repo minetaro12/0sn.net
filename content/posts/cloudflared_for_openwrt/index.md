@@ -9,6 +9,7 @@ keywords = ["", ""]
 description = " "
 showFullContent = false
 readingTime = false
+comments = true
 +++
 
 ルーター上でCloudflaredを動かしてみたかったのでやってみた
