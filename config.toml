@@ -1,4 +1,4 @@
-baseurl = "https://new.minetaro12.com/"
+baseurl = "https://minetaro12.com/"
 languageCode = "ja-JP"
 theme = "terminal"
 paginate = 5
