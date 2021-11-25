@@ -1,16 +1,16 @@
 baseurl = "https://minetaro12.com/"
-languageCode = "ja-JP"
+languageCode = "ja-jp"
 theme = "terminal"
-paginate = 5
+paginate = 4
 enableGitInfo = true
 disqusShortname = "minetaro12"
 
 [params]
   contentTypeName = "posts"
-  themeColor = "green"
-  showMenuItems = 2
+  themeColor = "orange"
+  showMenuItems = 4
   fullWidthTheme = false
-  centerTheme = false
+  centerTheme = true
   favicon = "favicon.ico"
   showLastUpdated = true
 
@@ -25,7 +25,7 @@ disqusShortname = "minetaro12"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "MINETARO12"
+      logoText = "[minetaro12@osan]#"
       logoHomeLink = "/"
 
     [languages.en.menu]
@@ -33,12 +33,24 @@ disqusShortname = "minetaro12"
         identifier = "about"
         name = "About"
         url = "/about"
+
       [[languages.en.menu.main]]
-        identifier = "links"
-        name = "Links"
-        url = "/links"
+        identifier = "github"
+        name = "My Github"
+        url = "https://github.com/minetaro12"
+
+      [[languages.en.menu.main]]
+        identifier = "misskey"
+        name = "My Misskey"
+        url = "https://msk.minetaro12.com/@minetaro12"
+
+      [[languages.en.menu.main]]
+        identifier = "twitter"
+        name = "My Twitter"
+        url = "https://twitter.com/1osan_x"
 
       [[languages.en.menu.main]]
         identifier = "tags"
         name = "Tags"
         url = "/tags"
+
