@@ -11,6 +11,7 @@ fields:
 - type: text
   name: author
   label: author
+  default: minetaro12
 - type: text
   name: authorTwitter
   label: authorTwitter
@@ -26,6 +27,8 @@ fields:
 - type: text
   name: description
   label: description
+  default: " "
+  hidden: false
 - type: boolean
   name: showFullContent
   label: showFullContent
@@ -35,3 +38,4 @@ fields:
 - type: boolean
   name: comments
   label: comments
+  default: true
