@@ -170,13 +170,13 @@ alpine:~# blkid
 
 二個目のパーティション(mmcblk0p2)のマウントポイントを作成します。
 
-```term
+```bash
 mkdir /media/mmcblk0p2
 ```
 
 /etc/fstabに追記し、起動時にマウントされるようにします。
 
-```term
+```bash
 echo "/dev/mmcblk0p2 /media/mmcblk0p2 ext4 rw,relatime 0 0" >> /etc/fstab
 ```
 
@@ -241,7 +241,7 @@ reboot
 再起動後、作成したユーザーでログインできることを確認します。
 
 ```term
-$ ssh user192.168.8.50
+$ ssh user@192.168.8.50
 user@192.168.8.50's password: 
 Welcome to Alpine!
 
