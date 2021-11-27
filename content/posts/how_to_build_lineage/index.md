@@ -10,6 +10,7 @@ description = " "
 showFullContent = false
 readingTime = false
 comments = true
+toc = true
 +++
 
 必要なPC（VPSでも可）

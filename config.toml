@@ -54,3 +54,8 @@ disqusShortname = "minetaro12"
         name = "Tags"
         url = "/tags"
 
+[markup]
+    [markup.tableOfContents]
+        endLevel = 2
+        ordered = false
+        startLevel = 2

@@ -10,6 +10,7 @@ description = " "
 showFullContent = false
 readingTime = false
 comments = true
+toc = false
 +++
 
 OracleCloudのA1インスタンスで確認
