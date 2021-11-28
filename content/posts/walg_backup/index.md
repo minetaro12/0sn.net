@@ -16,11 +16,11 @@ archives = ["2021", "2021-10"]
 
 こちらのサイトを参考にしました。
 
-[https://blog.noellabo.jp/entry/2019/03/05/yMjQeU9JXHxcyHTL](https://blog.noellabo.jp/entry/2019/03/05/yMjQeU9JXHxcyHTL)
+[WAL-GでオブジェクトストレージにPostgreSQLをバックアップしよう](https://blog.noellabo.jp/entry/2019/03/05/yMjQeU9JXHxcyHTL)
 
-[https://qiita.com/atsu1125/items/676d24c0473ad94b3f2b](https://qiita.com/atsu1125/items/676d24c0473ad94b3f2b)
+[MastodonのPostgreSQLのDatabaseをWAL-Gでオブジェクトストレージにバックアップ](https://qiita.com/atsu1125/items/676d24c0473ad94b3f2b)
 
-[https://blog.1q77.com/2019/06/wal-g/](https://blog.1q77.com/2019/06/wal-g/)
+[WAL-G で PostgreSQL の Backup や Replica 作成](https://blog.1q77.com/2019/06/wal-g/)
 
 ***
 
