@@ -11,4 +11,5 @@ showFullContent = false
 readingTime = false
 comments = true
 toc = true
+archives = ["{{ dateFormat "2006" .Date }}", "{{ dateFormat "2006-01" .Date }}"]
 +++

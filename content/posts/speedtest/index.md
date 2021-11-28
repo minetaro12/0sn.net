@@ -11,6 +11,7 @@ showFullContent = false
 readingTime = false
 comments = true
 toc = false
+archives = ["2021", "2021-07"]
 +++
 
 下のリンクから計測できます

@@ -11,6 +11,7 @@ showFullContent = false
 readingTime = false
 comments = true
 toc = true
+archives = ["2021", "2021-05"]
 +++
 
 必要なPC（VPSでも可）

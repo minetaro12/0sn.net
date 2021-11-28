@@ -8,7 +8,7 @@ disqusShortname = "minetaro12"
 [params]
   contentTypeName = "posts"
   themeColor = "orange"
-  showMenuItems = 4
+  showMenuItems = 6
   fullWidthTheme = false
   centerTheme = true
   favicon = "favicon.ico"
@@ -54,8 +54,17 @@ disqusShortname = "minetaro12"
         name = "Tags"
         url = "/tags"
 
+      [[languages.en.menu.main]]
+        identifier = "archives"
+        name = "Archives"
+        url = "/archives"
+
 [markup]
     [markup.tableOfContents]
         endLevel = 2
         ordered = false
         startLevel = 2
+
+[taxonomies]
+	archives = "archives"
+	tags = "tags"

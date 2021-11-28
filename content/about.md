@@ -22,6 +22,8 @@ Oさんです
 
 [Github](https://github.com/minetaro12)
 
+[Gitlab](https://gitlab.com/minetaro12)
+
 [xda](https://forum.xda-developers.com/m/minetaro12.11216215/)
 
 [AndroidFileHost](https://androidfilehost.com/?w=profile&uid=17248734326145681057)

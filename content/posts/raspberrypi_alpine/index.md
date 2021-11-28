@@ -11,6 +11,7 @@ showFullContent = false
 readingTime = false
 comments = true
 toc = true
+archives = ["2021", "2021-11"]
 +++
 
 RaspberryPiにAlpineLinuxをヘッドレスインストールしてみます。
