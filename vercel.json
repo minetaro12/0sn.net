@@ -3,12 +3,12 @@
         {
             "source": "/twitter",
             "destination": "https://twitter.com/1osan_x",
-            "permanent": false
+            "statusCode": 307
         },
         {
             "source": "/misskey",
             "destination": "https://msk.minetaro12.com/@minetaro12",
-            "permanent": false
+            "statusCode": 307
         }
     ]
 }
