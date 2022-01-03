@@ -16,4 +16,4 @@ archives = ["2021", "2021-07"]
 
 下のリンクから計測できます
 
-[https://minetaro12.com/speedtest](https://minetaro12.com/speedtest)
+[https://0sn.net/speedtest](https://0sn.net/speedtest)
