@@ -1,12 +1,12 @@
 {
-  "name": "minetaro12.com",
-  "short_name": "minetaro12.com",
+  "name": "0sn.net",
+  "short_name": "0sn.net",
   "theme_color": "#4263b2",
   "background_color": "#4263b2",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "https://minetaro12.com",
+  "start_url": "https://0sn.net",
   "icons": [
     {
       "src": "img/icons/icon-72x72.png",
