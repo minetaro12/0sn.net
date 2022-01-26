@@ -22,7 +22,7 @@ archives = ["2022", "2022-01"]
 ## 必要なもの
 * 独自ドメイン(freenom等の無料ドメインでもできますが非推奨)
 * [ImprovMX](https://improvmx.com/)のアカウント(CloudflareのメールルーティングでもOK)
-* [SendGrid](https://sendgrid.com/)のアカウント
+* [SendGrid](https://sendgrid.com/)のアカウント(GmailのSMTPサーバーを使う場合は不要)
 * Gmailアカウント
 
 ---
@@ -127,6 +127,34 @@ SMTPサーバーは`smtp.sendgrid.net`
 追加できていれば、メール作成画面の差出人に追加されています。
 
 ![gmail_add4](gmail_add4.jpg)
+
+## GmailのSMTPサーバーを使う場合
+
+2022/01/26追記
+
+[こちら](https://improvmx.com/guides/send-emails-using-gmail/)の方法を使います。
+
+まず、[こちら](https://www.google.com/landing/2step/)からGoogleアカウントの二段階認証を設定します。
+
+次に、[こちら](https://security.google.com/settings/security/apppasswords)からアプリパスワードを設定します。(アプリを選択ではメール、デバイスを選択で使っている端末を設定します。)
+
+{{<rawhtml>}}<u>ここで表示されたパスワードは必ずメモします。</u>{{</rawhtml>}}
+
+次にGmailにログインします。
+
+ここから先は[先程の手順](#2-%E9%80%81%E4%BF%A1%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B)とほぼ同じで、メールアドレスを追加する画面まで行きます。
+
+ここでも`エイリアスとして扱います。`のチェックは外します。
+
+![gmail_add](gmail_add.jpg)
+
+SMTPサーバーの設定では`smtp.gmail.com`
+
+ユーザー名はGoogleアカウントのログインに使ってるGmailアドレス
+
+パスワードは先程設定したアプリパスワードを設定します。
+
+アカウントの追加をクリックした後は同じです。
 
 ## 3. 独自ドメイン宛のメールをラベル分けする
 
