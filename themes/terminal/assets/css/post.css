@@ -76,6 +76,16 @@
     margin-top: 30px;
   }
 
+  &-content a {
+    text-decoration: none;
+    border-bottom: dashed 2px var(--accent);
+  }
+
+  &-content a:hover {
+    text-decoration: none;
+    border-bottom: solid 2px var(--accent);
+  }
+
   &-cover {
     border: 20px solid var(--accent);
     background: transparent;
