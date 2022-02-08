@@ -19,7 +19,7 @@ archives = ["2022", "2022-01"]
 
 意味的にはOさん→osan→0san→0snといったところです。
 
-`minetaro12.com`はお名前.comで取得し、CloudflareRegistrarに移管しましたが、今回は最初からCloudflareRegisterで取得しました。
+`minetaro12.com`はお名前.comで取得し、CloudflareRegistrarに移管しましたが、今回は最初からCloudflareRegistrarで取得しました。
 
 TLDは.xyzでも良かったのですが、スパムサイトに使われたりと怪しい感じなので.netにしました。
 
