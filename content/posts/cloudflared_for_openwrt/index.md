@@ -47,7 +47,7 @@ archives = ["2021", "2021-11"]
 
 終わると`bin`内にパッケージができる
 
-## バイナリだけ欲しい場合
+## バイナリだけ欲しい場合(推奨)
 
 [これ](https://github.com/cloudflare/cloudflared)をクローン
 
@@ -59,28 +59,28 @@ archives = ["2021", "2021-11"]
 
 バイナリが20MBくらいあるので、exrootで拡張するかパッケージを解凍してtmp等別の場所に入れてうごかすことをおすすめします。
 
-自分は`/etc/init.d/cloudflared`を作成して、起動時にバイナリをGithubからダウンロードするようにしました
+~~自分は`/etc/init.d/cloudflared`を作成して、起動時にバイナリをGithubからダウンロードするようにしました~~
+
+※2022/02/09追記
+
+起動時にダウンロードだと動かない場合があるので、`/etc/init.d/cloudflared`を作成しUSBメモリから読み込むようにしました。(tmuxが必要です)
 
 デーモン化する場合は`/root/.cloudflared`の中身を`/etc/cloudflared`にコピーする必要があります。
 
 ```bash
-#!/bin/sh /etc/rc.common
+!/bin/sh /etc/rc.common
 
 START=99
 STOP=15
 
 start() {
         # commands to launch application
-        if [ ! -e /tmp/cloudflared ];then
-                wget https://github.com/minetaro12/openwrt-cloudflared/releases/download/2021.11.0/cloudflared-linux-mipsel -O /tmp/cloudflared
-        fi
-        chmod +x /tmp/cloudflared
-        tmux new-session -s cloudflared-ssh -d "/tmp/cloudflared tunnel --hostname hogehoge.com --url ssh://localhost:22"
+        tmux new-session -s cfd-ssh -d "/mnt/sda1/bin/cloudflared tunnel --hostname ssh.example.com --url ssh://localhost:22 --no-autoupdate"
 }
 
 stop() {
         # commands to kill application
-        tmux send-keys -t cloudflared-ssh C-c
+        tmux send-keys -t cfd-ssh C-c
         sleep 5
 }
 ```
