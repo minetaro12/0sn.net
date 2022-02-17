@@ -31,7 +31,7 @@ TLDは.xyzでも良かったのですが、スパムサイトに使われたり�
 
 ただ旧ドメインでアクセスできなくなっても困るので、`minetaro12.com`は現ドメインにリダイレクトするようにしまたした。
 
-ドメイン以降のパスを保持するようにしてあるので、[minetaro12.com/posts/new_domain](https://minetaro12.com/posts/new_domain)にアクセスすると、このページに飛びます。
+ドメイン以降のパスを保持するようにしてあるので、[minetaro12.com/posts/new_domain/](https://minetaro12.com/posts/new_domain/)にアクセスすると、このページに飛びます。
 
 Nginxで設定したのはこんな感じです。
 
