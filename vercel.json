@@ -9,6 +9,57 @@
             "source": "/misskey",
             "destination": "https://msk.minetaro12.com/@minetaro12",
             "statusCode": 307
+        },
+        
+        {
+            "source": "/posts/how_to_build_lineage",
+            "destination": "/posts/20210528/how_to_build_lineage",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/speedtest",
+            "destination": "/posts/20210708/speedtest",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/docker_install",
+            "destination": "/posts/20210731/docker_install",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/expansion_oc_bootv",
+            "destination": "/posts/20210803/expansion_oc_bootv",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/walg_backup",
+            "destination": "/posts/20211013/walg_backup",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/cloudflared_for_openwrt",
+            "destination": "/posts/20211107/cloudflared_for_openwrt",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/raspberrypi_alpine",
+            "destination": "/posts/20211127/raspberrypi_alpine",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/new_domain",
+            "destination": "/posts/20220104/new_domain",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/oci_reinstall",
+            "destination": "/posts/20220105/oci_reinstall",
+            "statusCode": 307
+        },
+        {
+            "source": "/posts/owndomain_email",
+            "destination": "/posts/20220117/owndomain_email",
+            "statusCode": 307
         }
     ]
 }
