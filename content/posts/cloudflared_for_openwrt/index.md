@@ -18,7 +18,7 @@ archives = ["2021", "2021-11"]
 
 ## ビルド方法
 
-1\.  OpenWrtのSDKをダウンロードして解凍
+1\. OpenWrtのSDKをダウンロードして解凍
 
 [ここ](https://downloads.openwrt.org/)からターゲットのSDKをダウンロードして解凍する
 
