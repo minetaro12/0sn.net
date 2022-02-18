@@ -40,7 +40,7 @@ DNSレコードの追加はネームサーバーによって異なるので省�
 
 追加できたらエイリアスの追加をします。
 
-![alias](improvmx_alias.jpg)
+![alias](improvmx-alias.jpg)
 
 FOWARDS TOの前には受信したいアドレスを入力します。(例:example@example.com)
 
@@ -96,7 +96,7 @@ FOWARDS TOの後には転送先のGmailアドレスを入力します。
 
 `アカウントとインポート`タブに移動し、`他のメールアドレスを追加`をクリック。
 
-![gmail_a](gmail_account.jpg)
+![gmail-a](gmail-account.jpg)
 
 `追加するメールアドレスを入力してください。`と表示されるので、先程設定したアドレスを入力します。
 
@@ -104,7 +104,7 @@ FOWARDS TOの後には転送先のGmailアドレスを入力します。
 
 `エイリアスとして扱います。`のチェックは外します。
 
-![gmail_add](gmail_add.jpg)
+![gmail-add](gmail-add.jpg)
 
 次に、SMTPサーバーの設定をします。
 
@@ -116,17 +116,17 @@ SMTPサーバーは`smtp.sendgrid.net`
 
 他の部分はそのままでOKです。
 
-![gmail_add2](gmail_add2.jpg)
+![gmail-add2](gmail-add2.jpg)
 
 アカウント追加をクリックすると、下のような確認メールが届きます。
 
-![gmail_add3](gmail_add3.jpg)
+![gmail-add3](gmail-add3.jpg)
 
 確認メールのリンクをクリックするとアドレスの追加が完了します。
 
 追加できていれば、メール作成画面の差出人に追加されています。
 
-![gmail_add4](gmail_add4.jpg)
+![gmail-add4](gmail-add4.jpg)
 
 ## GmailのSMTPサーバーを使う場合
 
@@ -146,7 +146,7 @@ SMTPサーバーは`smtp.sendgrid.net`
 
 ここでも`エイリアスとして扱います。`のチェックは外します。
 
-![gmail_add](gmail_add.jpg)
+![gmail-add](gmail-add.jpg)
 
 SMTPサーバーの設定では`smtp.gmail.com`
 
@@ -164,11 +164,11 @@ Gmailの右上の歯車マークを押し、`すべての設定を表示`をク�
 
 `フィルタとブロック中のアドレス`タブに移動し、`新しいフィルタを作成`をクリックします。
 
-![gmail_filter](gmail_filter.jpg)
+![gmail-filter](gmail-filter.jpg)
 
 Toにドメインを入力して、`フィルタを作成`をクリックします。
 
-![gmail_filter2](gmail_filter2.jpg)
+![gmail-filter2](gmail-filter2.jpg)
 
 `ラベルをつける`にチェックを入れ、 右のプルダウンメニューから`新しいラベル...`をクリックしラベルを作成します。
 
@@ -176,8 +176,8 @@ Toにドメインを入力して、`フィルタを作成`をクリックしま�
 
 できたら`フィルタを作成`をクリックします。
 
-![gmail_filter3](gmail_filter3.jpg)
+![gmail-filter3](gmail-filter3.jpg)
 
 左側にラベルが表示されるので、独自ドメイン宛のメールはそこに表示されるようになります。
 
-![gmail_label](gmail_label.jpg)
+![gmail-label](gmail-label.jpg)

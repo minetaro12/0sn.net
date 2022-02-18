@@ -58,23 +58,23 @@ SSH接続はまだ切らないでください。
 
 インスタンスのダッシュボードからコンソール接続をクリックし、Cloud Shell接続の起動をクリックします。
 
-![console](oci_console.jpg)
+![console](oci-console.jpg)
 
 クリックすると次のような画面になるので、一度エンターを押します。
 
-![console2](oci_console2.jpg)
+![console2](oci-console2.jpg)
 
 ここでSSHから`sudo reboot`します。
 
 するとコンソール画面に起動ログが流れるので、ESCを連打します。
 
-![ocibootmenu](oci_bootmenu.jpg)
+![ocibootmenu](oci-bootmenu.jpg)
 
 上下キーとエンターで、Boot Maintenance Manager→Boot From File→UEFI~→netboot.xyz.efiに進みます。
 
 netboot.xyz.efiを選択すると次のような画面になります。
 
-![netboot](oci_netboot.jpg)
+![netboot](oci-netboot.jpg)
 
 ## 4. OSをインストールする
 
