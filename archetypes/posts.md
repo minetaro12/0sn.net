@@ -9,7 +9,7 @@ keywords = ["", ""]
 description = " "
 showFullContent = false
 readingTime = false
-comments = true
+hideComments = false
 toc = true
 archives = ["{{ dateFormat "2006" .Date }}", "{{ dateFormat "2006-01" .Date }}"]
 +++
