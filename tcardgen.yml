@@ -1,0 +1,18 @@
+title:
+  fgHexColor: "#4169e1"
+  fontSize: 75
+  fontStyle: Bold
+  start:
+    px: 130
+    pY: 200
+
+info:
+  fgHexColor: "#ffffff"
+  start:
+    px: 90
+    pY: 20
+
+tags:
+  start:
+    px: 1100
+    pY: 25
