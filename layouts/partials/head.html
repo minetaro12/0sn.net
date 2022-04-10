@@ -43,12 +43,13 @@
 
 {{ $OGPPATH := "" }}
 {{ $OGPFILE := print "static/ogp/" $DATE "-" $FILEBASEDIR ".png" }}
-{{ $OGPFILE2 := print "/ogp/" $DATE "-" $FILEBASEDIR ".png" }}
+{{ $OGPFILE2 := print $.Site.BaseURL "ogp/" $DATE "-" $FILEBASEDIR ".png" }}
+{{ $OGPDEF := print $.Site.BaseURL "img/defogp.png" }}
 
 {{ if ( fileExists $OGPFILE) }}
   {{ $OGPPATH = $OGPFILE2 }}
 {{ else }}
-  {{ $OGPPATH = "/img/defogp.png" }}
+  {{ $OGPPATH = $OGPDEF }}
 {{ end }}
 
 <!-- Twitter Card -->
