@@ -2,9 +2,8 @@
 
 for FILE in ./content/posts/*/*/*.md
 do
-  FULLDIR=$(dirname $FILE)
-  DIRNAME=$(basename $FULLDIR)
-  DATE=$(basename `dirname $FULLDIR`)
+  DIRNAME=$(echo $FILE | rev | cut -d "/" -f 2 | rev)
+  DATE=$(echo $FILE | rev | cut -d "/" -f 3 | rev)
   ./bin/tcardgen \
     -f ./font \
     -o ./static/ogp/$DATE-$DIRNAME.png \
