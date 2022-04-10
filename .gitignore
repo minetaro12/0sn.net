@@ -52,7 +52,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -90,4 +91,5 @@ hugo.linux
 # Temporary lock file while building
 /.hugo_build.lock
 
+/static/ogp
 

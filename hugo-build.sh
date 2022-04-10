@@ -5,7 +5,7 @@ do
   FULLDIR=$(dirname $FILE)
   DIRNAME=$(basename $FULLDIR)
   DATE=$(basename `dirname $FULLDIR`)
-  tcardgen \
+  ./bin/tcardgen \
     -f ./font \
     -o ./static/ogp/$DATE-$DIRNAME.png \
     -t ./ogp.png \

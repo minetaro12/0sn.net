@@ -34,6 +34,23 @@
   <link rel="shortcut icon" href="{{ printf "img/favicon/%s.png" ($.Site.Params.ThemeColor | default "orange") | absURL }}">
 {{ end }}
 
+<!-- OGP Img Check -->
+{{ $FILEPATH := .File.Path }} <!-- posts/20220101/hogehoge/index.md -->
+{{ $FILEDIR := path.Dir $FILEPATH }} <!-- posts/20220101/hogehoge -->
+{{ $FILEBASEDIR := path.Base $FILEDIR }} <!-- hogehoge -->
+{{ $FILEDIR2 := path.Dir $FILEDIR }} <!-- posts/20220101 -->
+{{ $DATE := path.Base $FILEDIR2 }} <!-- 20220101 -->
+
+{{ $OGPPATH := "" }}
+{{ $OGPFILE := print "static/ogp/" $DATE "-" $FILEBASEDIR ".png" }}
+{{ $OGPFILE2 := print "/ogp/" $DATE "-" $FILEBASEDIR ".png" }}
+
+{{ if ( fileExists $OGPFILE) }}
+  {{ $OGPPATH = $OGPFILE2 }}
+{{ else }}
+  {{ $OGPPATH = "/img/defogp.png" }}
+{{ end }}
+
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 {{ if (isset $.Site.Params "twitter") }}
@@ -42,7 +59,7 @@
   {{ end }}
     <meta name="twitter:creator" content="{{ if .IsHome }}{{ $.Site.Params.Twitter.creator }}{{ else if isset .Params "authortwitter" }}{{ .Params.authorTwitter }}{{ else }}{{ .Params.Author }}{{ end }}" />
 {{ end }}
-<meta name="twitter:image" content="https://ogp.0sn.net/**{{ .Title }}**.png?textcolor=royalblue&md=1&fontSize=75px&background=https://rawcdn.githack.com/minetaro12/blog-content/68d4bed083436219bcf753bb8d0946d9150c5766/ogp.png">
+<meta name="twitter:image" content="{{ $OGPPATH }}">
 
 <!-- OG data -->
 <meta property="og:locale" content="{{ $.Site.Language.Lang }}" />
@@ -62,7 +79,7 @@
   {{ end }}
 {{ end }}
 -->
-<meta property="og:image" content="https://ogp.0sn.net/**{{ .Title }}**.png?textcolor=royalblue&md=1&fontSize=75px&background=https://rawcdn.githack.com/minetaro12/blog-content/68d4bed083436219bcf753bb8d0946d9150c5766/ogp.png">
+<meta property="og:image" content="{{ $OGPPATH }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 {{ range .Params.categories }}
