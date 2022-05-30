@@ -47,6 +47,8 @@ $ sudo su
 net.ipv4.ip_forward = 1
 ```
 
+---
+
 `/etc/wireguard/wg0.conf`を作成する
 
 VPNのインターフェースは`192.168.10.1/24`
@@ -56,6 +58,8 @@ VPNのインターフェースは`192.168.10.1/24`
 クライアントは`192.168.10.2`とする
 
 PostUp PostDownはNATの設定なのでインターフェース名は適宜変更する
+
+クライアントを追加する場合は、Peerを追加する
 
 ```conf
 [Interface]
@@ -70,7 +74,9 @@ PublicKey = #wgclient.pubの内容
 AllowedIPs = 192.168.10.2/32 #クライアントに割り当てるIPアドレス
 ```
 
-以下iptablesの設定(UDPなので注意)
+---
+
+50000番で待ち受けるのでiptablesのは下のように設定(UDPなので注意)
 
 ```iptables
 -A INPUT -p udp --dport 50000 -j ACCEPT
@@ -107,12 +113,14 @@ Address = 192.168.10.2/32 #サーバー側で割り当てたクライアント�
 
 [Peer]
 PublicKey = #wgserver.pubの内容
-AllowedIPs = 192.168.0.0/24, 192.168.10.1/24 #WireGuardを経由するIPアドレス,範囲
+AllowedIPs = 192.168.0.0/24, 192.168.10.0/24 #WireGuardを経由するIPアドレス,範囲
 EndPoint = #サーバーのIPアドレス:ポート
 ```
 
 PeerのAllowedIPsで`0.0.0.0/0`を指定するとすべての通信がWireGuard経由になる
 
-サーバーからクライアント、クライアントからクライアントを通すにはAllowedIPsにVPNインターフェースのアドレスを指定する必要がある(ここでは192.168.10.1/24)
+サーバーからクライアント、クライアントからクライアントを通すにはAllowedIPsにVPNインターフェースのアドレスを指定する必要がある(ここでは`192.168.10.1/24`)
 
 `sudo wg-quick up wg0`で接続
+
+`sudo wg-quick down wg0`で切断
