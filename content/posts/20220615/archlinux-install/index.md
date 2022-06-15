@@ -1,6 +1,6 @@
 +++
 title = "ArchLinuxのインストールメモ"
-date = "2022-06-15T04:38:22Z"
+date = "2022-06-15T14:38:22+09:00"
 author = "minetaro12"
 authorTwitter = "" #do not include @
 cover = ""
