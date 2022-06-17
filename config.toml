@@ -2,7 +2,7 @@ baseurl = "https://0sn.net/"
 languageCode = "ja-jp"
 theme = "terminal"
 paginate = 4
-enableGitInfo = true
+enableGitInfo = false
 #disqusShortname = "minetaro12"
 
 [params]
