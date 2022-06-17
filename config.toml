@@ -12,7 +12,7 @@ enableGitInfo = false
   fullWidthTheme = false
   centerTheme = true
   favicon = "favicon.ico"
-  showLastUpdated = true
+  showLastUpdated = false
 
 [languages]
   [languages.en]
