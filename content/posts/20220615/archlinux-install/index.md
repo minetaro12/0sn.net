@@ -15,6 +15,12 @@ archives = ["2022", "2022-06"]
 +++
 ライブ環境が起動しているという前提です。
 
+自分のThinkBook 13g Gen3ではTabキーを押すたびにビープ音が鳴るので`pcspkr`をアンロードします。
+
+```term
+# rmmod pcspkr
+```
+
 ## 1. キーボードレイアウトの設定
 
 ```term
@@ -188,7 +194,15 @@ IntelCPUの場合は`pacman -S intel-ucode`、AMDCPUの場合は`pacman -S amd-u
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## 16. 再起動
+## 16. その他
+
+再起動後にまたビープ音が鳴ってしまうので、`pcspkr`をブラックリストに登録して、読み込まれないようにしまう。
+
+```term
+# echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+```
+
+## 17. 再起動
 
 再起動後ネットワークに接続するために、dhcpcdサービスを有効にしておきます。
 

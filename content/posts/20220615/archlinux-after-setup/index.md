@@ -46,7 +46,7 @@ sudoをインストール
 ## 3. Xorgのインストール
 
 ```term
-# pacman -S xorg-server
+$ sudo pacman -S xorg-server
 ```
 
 ## 4. ビデオドライバのインストール
