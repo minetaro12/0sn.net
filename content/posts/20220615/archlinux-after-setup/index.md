@@ -93,7 +93,7 @@ $ sudo pacman -S xfce4 xfce4-goodies
 ## 8. fcitx-mozcのインストール
 
 ```term
-$ sudo pacman -S fcitx-mozc
+$ sudo pacman -S fcitx-mozc fcitx-configtool
 ```
 
 `.pam_environment`に以下の記述をします。
@@ -121,3 +121,38 @@ $ sudo localectl set-x11-keymap jp
 ## 10. 再起動
 
 `reboot`で再起動し、GUIでログインできればOK
+
+---
+
+## KDEの場合
+
+[5. フォントのインストール](/posts/20220615/archlinux-after-setup/#5-%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)の後に、LightDMではなくSDDMをインストールします。
+
+```term
+$ sudo pacman -S sddm
+$ sudo systemctl enable sddm
+```
+
+### KDEのインストール
+
+```term
+$ sudo pacman -S plasma konsole
+```
+
+### fcitx-mozcのインストール
+
+```term
+$ sudo pacman -S fcitx-mozc fcitx-configtool kcm-fcitx
+```
+
+`.pam_environment`に以下の記述をします。
+
+```.pam_environment
+GTK_IM_MODULE DEFAULT=fcitx
+QT_IM_MODULE  DEFAULT=fcitx
+XMODIFIERS    DEFAULT=@im=fcitx
+```
+
+この後は[9. ロケールの設定](/posts/20220615/archlinux-after-setup/#9-%E3%83%AD%E3%82%B1%E3%83%BC%E3%83%AB%E3%81%AE%E8%A8%AD%E5%AE%9A)と同じです。
+
+fcitxが自動起動しない場合は、設定から`fcitx-autostart`を自動起動に追加します。

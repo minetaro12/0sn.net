@@ -15,7 +15,9 @@ archives = ["2022", "2022-06"]
 +++
 ライブ環境が起動しているという前提です。
 
-自分のThinkBook 13g Gen3ではTabキーを押すたびにビープ音が鳴るので`pcspkr`をアンロードします。
+自分のThinkBook 13s Gen3では起動する際にビープ音が鳴ったので、切るには`loader/loader.conf`の`beep on`を`beep off`に書き換えます。
+
+起動後にもTabキーを押すたびにビープ音が鳴るので`pcspkr`をアンロードします。
 
 ```term
 # rmmod pcspkr
