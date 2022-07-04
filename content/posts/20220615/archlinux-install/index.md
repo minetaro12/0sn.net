@@ -83,7 +83,19 @@ UEFIの場合は`gdisk`を使います。
 # mkfs.ext4 /dev/sda2
 ```
 
-**今回はデュアルブートの場合は考慮していません。**
+### UEFI環境でWindowsとデュアルブートする場合
+
+![uefi-part](uefi-part.jpg)
+
+画像のようなすでにあるEFIシステムパーティションがあるのでこれを使います。
+
+**新しくEFIシステムパーティションを作らないでください**
+
+ArchLinux用のシステムパーティションを、Windowsのパーティションの後ろに作成します。
+
+リカバリ用のパーティションがある場合があるので(画像だと`WINRE_DRV`)、**消したり動かしたりしないでください。**
+
+**デュアルブートは操作を誤るとWindowsのパーティションを破壊する恐れがあるので十分注意して行ってください**
 
 ## 6. ファイルシステムのマウント
 
@@ -91,6 +103,16 @@ UEFIの場合は`gdisk`を使います。
 # mount /dev/sda2 /mnt
 # mkdir /mnt/boot
 # mount /dev/sda1 /mnt/boot
+```
+
+### UEFI環境でWindowsとデュアルブートする場合
+
+すでにあるEFIシステムパーティションが`/dev/sdaA`、ArchLinuxをインストールするパーティションが`/dev/sdaB`だとします。
+
+```term
+# mount /dev/sdaB /mnt
+# mkdir -p /mnt/boot/efi
+# mount /dev/sdaA /mnt/boot/efi
 ```
 
 ## 7. サーバーのミラーリストの設定
@@ -196,9 +218,19 @@ IntelCPUの場合は`pacman -S intel-ucode`、AMDCPUの場合は`pacman -S amd-u
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+### UEFI環境でWindowsとデュアルブートする場合
+
+```term
+# pacman -S grub efibootmgr
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+# grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+UEFIのエントリに項目が追加されているのでそこから起動ができます。
+
 ## 16. その他
 
-再起動後にまたビープ音が鳴ってしまうので、`pcspkr`をブラックリストに登録して、読み込まれないようにしまう。
+再起動後にまたビープ音が鳴ってしまうので、`pcspkr`をブラックリストに登録して、読み込まれないようにします。
 
 ```term
 # echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
