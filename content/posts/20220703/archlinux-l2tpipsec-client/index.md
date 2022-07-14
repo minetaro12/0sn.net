@@ -1,18 +1,10 @@
-+++
-title = "ArchLinuxでL2TP/IPSecに接続するときにハマった"
-date = "2022-07-03T17:44:13+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "archlinux", "vpn"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-hideComments = false
-toc = true
-archives = ["2022", "2022-07"]
-+++
+---
+title: "ArchLinuxでL2TP/IPSecに接続するときにハマった"
+date: "2022-07-03T17:44:13+09:00"
+tags: ["linux", "archlinux", "vpn"]
+comments: true
+showToc: true
+---
 
 ArchLinuxでL2TP/IPSecのVPNに接続するのにかなりハマったのでメモ
 
@@ -40,7 +32,7 @@ xl2tpdでは`bad packet`となってしまい切断されるのでGoLang製のkl
 
 [https://github.com/katalix/go-l2tp](https://github.com/katalix/go-l2tp)
 
-```term
+```
 $ git clone https://github.com/katalix/go-l2tp
 $ cd go-l2tp/cmd/kl2tpd
 $ go build

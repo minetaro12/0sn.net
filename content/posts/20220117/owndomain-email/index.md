@@ -1,18 +1,10 @@
-+++
-title = "無料で独自ドメインメールアドレスを作ってみる"
-date = "2022-01-17T11:27:16+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["domain", "mail"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2022", "2022-01"]
-+++
+---
+title: "無料で独自ドメインメールアドレスを作ってみる"
+date: "2022-01-17T11:27:16+09:00"
+tags: ["domain", "mail"]
+comments: true
+showToc: true
+---
 自分でメールサーバーを建てずに、独自ドメインでメールを送受信してみます。
 
 無料プランを使用しているので制限があります。(ImprovMXでの受信は一日500通まで、SendGridでの送信は一日100通まで)

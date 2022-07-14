@@ -1,18 +1,10 @@
-+++
-title = "iptablesのセットアップメモ"
-date = "2022-05-29T21:12:47+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "iptables"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-hideComments = false
-toc = true
-archives = ["2022", "2022-05"]
-+++
+---
+title: "iptablesのセットアップメモ"
+date: "2022-05-29T21:12:47+09:00"
+tags: ["linux", "iptables"]
+comments: true
+showToc: true
+---
 iptablesのセットアップメモ
 
 Ubuntu/Debian,IPv4前提

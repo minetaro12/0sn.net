@@ -1,18 +1,10 @@
-+++
-title = "RaspberryPiにAlpineLinuxをヘッドレスインストール"
-date = "2021-11-27T14:27:56+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "alpine", "raspberrypi"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2021", "2021-11"]
-+++
+---
+title: "RaspberryPiにAlpineLinuxをヘッドレスインストール"
+date: "2021-11-27T14:27:56+09:00"
+tags: ["linux", "alpine", "raspberrypi"]
+comments: true
+showToc: true
+---
 
 RaspberryPiにAlpineLinuxをヘッドレスインストールしてみます。
 
@@ -66,7 +58,7 @@ RaspberryPiにSDカードとLANケーブルを差し込み、電源を入れま�
 
 もしくは作業PCからnmapを使って確認します。
 
-```term
+```
 $ sudo nmap -sP 192.168.8.0/24
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-11-27 15:14 JST
 :
@@ -83,7 +75,7 @@ IPアドレスがわかったらSSHでログインします。
 
 初期設定ではrootアカウントのみでパスワード無しです。
 
-```term
+```
 $ ssh root@192.168.8.50
 Welcome to Alpine!
 
@@ -102,7 +94,7 @@ localhost:~#
 
 最後の方で設定の保存先を聞かれますが、そのままエンターでOKです。
 
-```term
+```
 No disks available. Try boot media /media/mmcblk0p1? (y/n) [n] #エンター
 Enter where to store configs ('floppy', 'mmcblk0p1', 'usb' or 'none') [mmcblk0p1] #エンター
 Enter apk cache directory (or '?' or 'none') [/media/mmcblk0p1/cache] ? #エンター
@@ -143,7 +135,7 @@ reboot
 
 先程設定したrootパスワードでログインします。
 
-```term
+```
 $ ssh root@192.168.8.50 
 root@192.168.8.50's password: 
 Welcome to Alpine!
@@ -161,7 +153,7 @@ alpine:~#
 
 `blkid`を実行しパーティションがあることを確認します。
 
-```term
+```
 alpine:~# blkid 
 /dev/loop/0: TYPE="squashfs"
 /dev/mmcblk0p2: UUID="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" TYPE="ext4"
@@ -183,7 +175,7 @@ echo "/dev/mmcblk0p2 /media/mmcblk0p2 ext4 rw,relatime 0 0" >> /etc/fstab
 
 `mount -a`を実行すると`/media/mmcblk0p2`にマウントされます。
 
-```term
+```
 alpine:~# mount -a
 alpine:~# df
 Filesystem           1K-blocks      Used Available Use% Mounted on
@@ -241,7 +233,7 @@ reboot
 
 再起動後、作成したユーザーでログインできることを確認します。
 
-```term
+```
 $ ssh user@192.168.8.50
 user@192.168.8.50's password: 
 Welcome to Alpine!

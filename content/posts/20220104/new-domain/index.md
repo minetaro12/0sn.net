@@ -1,18 +1,10 @@
-+++
-title = "0sn.netを取得したので移行しました"
-date = "2022-01-04T12:35:47+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["domain", "web"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = false
-archives = ["2022", "2022-01"]
-+++
+---
+title: "0sn.netを取得したので移行しました"
+date: "2022-01-04T12:35:47+09:00"
+tags: ["domain", "web"]
+comments: true
+showToc: false
+---
 あけましておめでとうございます（今更
 
 短いドメインが欲しいなと思い、`0sn.net`を取得しました。
@@ -35,7 +27,7 @@ TLDは.xyzでも良かったのですが、スパムサイトに使われたり�
 
 Nginxで設定したのはこんな感じです。
 
-```conf
+```
 server {
         :
         server_name minetaro12.com;

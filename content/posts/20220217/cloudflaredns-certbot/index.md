@@ -1,18 +1,10 @@
-+++
-title = "CloudflareのDNSを使ってCertbotで証明書を発行する"
-date = "2022-02-17T18:37:18+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["cloudflare", "domain", "certbot"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2022", "2022-02"]
-+++
+---
+title: "CloudflareのDNSを使ってCertbotで証明書を発行する"
+date: "2022-02-17T18:37:18+09:00"
+tags: ["cloudflare", "domain", "certbot"]
+comments: true
+showToc: true
+---
 通常ワイルドカード証明書を発行する場合はDNS認証を手動で行う必要がありますが、CloudflareのDNSを使っている場合はAPIを利用して自動化することができます。
 
 ---

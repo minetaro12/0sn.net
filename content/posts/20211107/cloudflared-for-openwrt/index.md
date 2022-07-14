@@ -1,18 +1,10 @@
-+++
-title = "OpenWrtでCloudflaredを動かしてみる"
-date = "2021-11-07T08:31:00Z"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "cloudflare", "openwrt"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2021", "2021-11"]
-+++
+---
+title: "OpenWrtでCloudflaredを動かしてみる"
+date: "2021-11-07T08:31:00Z"
+tags: ["linux", "cloudflare", "openwrt"]
+comments: true
+showToc: true
+---
 
 ルーター上でCloudflaredを動かしてみたかったのでやってみた
 

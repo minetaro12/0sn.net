@@ -1,18 +1,10 @@
-+++
-title = "Ubuntu22.04へのDockerのインストール"
-date = "2022-06-11T17:40:36+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["docker", "ubuntu", "linux"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-hideComments = false
-toc = false
-archives = ["2022", "2022-06"]
-+++
+---
+title: "Ubuntu22.04へのDockerのインストール"
+date: "2022-06-11T17:40:36+09:00"
+tags: ["docker", "ubuntu", "linux"]
+comments: true
+showToc: false
+---
 
 Ubuntu20.04とGPGキーの追加の方法が違います。
 

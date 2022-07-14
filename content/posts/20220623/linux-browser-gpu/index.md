@@ -1,18 +1,10 @@
-+++
-title = "Linuxのブラウザでハードウェアデコードを有効にする"
-date = "2022-06-23T15:41:57+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "chrome", "chromium", "firefox"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-hideComments = false
-toc = true
-archives = ["2022", "2022-06"]
-+++
+---
+title: "Linuxのブラウザでハードウェアデコードを有効にする"
+date: "2022-06-23T15:41:57+09:00"
+tags: ["linux", "chrome", "chromium", "firefox"]
+comments: true
+showToc: true
+---
 ThinkBook 13s Gen3(Ryzen7 5800U/ArchLinux)で確認しました。
 
 `vainfo`コマンドでハードウェアデコードが使用可能なことを確認します。

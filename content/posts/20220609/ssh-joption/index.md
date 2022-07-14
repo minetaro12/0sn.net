@@ -1,18 +1,10 @@
-+++
-title = "SSHのJオプションのメモ"
-date = "2022-06-09T11:43:14+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "ssh"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-hideComments = false
-toc = false
-archives = ["2022", "2022-06"]
-+++
+---
+title: "SSHのJオプションのメモ"
+date: "2022-06-09T11:43:14+09:00"
+tags: ["linux", "ssh"]
+comments: true
+showToc: false
+---
 多段SSHをする場合は`ProxyCommand`を使用する場合があったがJオプションでもっと簡単にできる
 
 ## やり方

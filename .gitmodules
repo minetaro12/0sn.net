@@ -1,0 +1,4 @@
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/minetaro12/hugo-PaperMod
+	branch = master

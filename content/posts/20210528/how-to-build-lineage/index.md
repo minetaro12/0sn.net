@@ -1,18 +1,10 @@
-+++
-title = "LineageOS17.1のビルド（XperiaZ5)"
-date = "2021-05-28T19:06:24+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["lineageos"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2021", "2021-05"]
-+++
+---
+title: "LineageOS17.1のビルド（XperiaZ5)"
+date: "2021-05-28T19:06:24+09:00"
+tags: ["lineageos"]
+comments: true
+showToc: true
+---
 
 必要なPC（VPSでも可）
 

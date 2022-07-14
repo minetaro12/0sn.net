@@ -1,18 +1,10 @@
-+++
-title = "Ubuntu20.04へのDockerのインストール"
-date = "2021-07-31T01:13:00Z"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["docker", "ubuntu", "linux"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = false
-archives = ["2021", "2021-07"]
-+++
+---
+title: "Ubuntu20.04へのDockerのインストール"
+date: "2021-07-31T01:13:00Z"
+tags: ["docker", "ubuntu", "linux"]
+comments: true
+showToc: false
+---
 
 OracleCloudのA1インスタンスで確認
 

@@ -1,18 +1,10 @@
-+++
-title = "RaspberryPiでZramを使う"
-date = "2022-05-29T15:08:27+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["raspberrypi", "linux", "zram"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-hideComments = false
-toc = false
-archives = ["2022", "2022-05"]
-+++
+---
+title: "RaspberryPiでZramを使う"
+date: "2022-05-29T15:08:27+09:00"
+tags: ["raspberrypi", "linux", "zram"]
+comments: true
+showToc: false
+---
 ラスパイでZramを有効にするメモ
 
 Raspberry Pi OS Lite(bullseye)で確認
@@ -63,7 +55,7 @@ done
 
 `/etc/systemd/system/zram.service`に以下の内容を書き込む
 
-```zram.service
+```.service
 [Unit]
 Description=zram Service
 

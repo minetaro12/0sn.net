@@ -1,18 +1,10 @@
-+++
-title = "Hugoでリンクを新しいタブで開くようにする"
-date = "2022-02-22T09:47:23+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["web", "hugo"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = false
-archives = ["2022", "2022-02"]
-+++
+---
+title: "Hugoでリンクを新しいタブで開くようにする"
+date: "2022-02-22T09:47:23+09:00"
+tags: ["web", "hugo"]
+comments: true
+showToc: false
+---
 次のように書くとリンクになりますが、デフォルトでは新しいタブでは開かずにそのまま飛びます。
 
 ```

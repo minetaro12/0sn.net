@@ -1,18 +1,10 @@
-+++
-title = "OracleCloudのブートボリュームの拡張"
-date = "2021-08-03T08:44:00Z"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["oraclecloud", "linux"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = false
-archives = ["2021", "2021-08"]
-+++
+---
+title: "OracleCloudのブートボリュームの拡張"
+date: "2021-08-03T08:44:00Z"
+tags: ["oraclecloud", "linux"]
+comments: true
+showToc: false
+---
 ※Ubuntu20.04LTSにて確認しました
 
 1\. OracleCloudのWebコンソールの左上のメニュー→ストレージ→ブロックストレージ→ブートボリュームに進む

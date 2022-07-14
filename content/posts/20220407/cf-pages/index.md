@@ -1,18 +1,10 @@
-+++
-title = "Cloudflare Pagesに移行しました"
-date = "2022-04-07T18:44:58+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["cloudflare", "web"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-hideComments = false
-toc = false
-archives = ["2022", "2022-04"]
-+++
+---
+title: "Cloudflare Pagesに移行しました"
+date: "2022-04-07T18:44:58+09:00"
+tags: ["cloudflare", "web"]
+comments: true
+showToc: false
+---
 Cloudflare Pages自体は前から知っていたのですが、ビルドの速度が非常に遅くあまり使っていませんでした。
 
 しかし最近見たところ高速ビルドなるオプションがありました。

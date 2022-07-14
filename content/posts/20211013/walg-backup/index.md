@@ -1,18 +1,10 @@
-+++
-title = "PostgresqlをWAL-Gでバックアップ&リストア"
-date = "2021-10-13T22:52:00Z"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "ubuntu", "wal-g", "postgresql"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2021", "2021-10"]
-+++
+---
+title: "PostgresqlをWAL-Gでバックアップ&リストア"
+date: "2021-10-13T22:52:00Z"
+tags: ["linux", "ubuntu", "wal-g", "postgresql"]
+comments: true
+showToc: true
+---
 
 こちらのサイトを参考にしました。
 
@@ -91,12 +83,12 @@ wal-g.sh backup-list
 
 /etc/postgresql/12/main/conf.d/archive.confを作成し次のように書き込む
 
-```baah
-archive_mode = on
-archive_command = '/usr/local/bin/wal-g.sh wal-push %p'  
-archive_timeout = 60
-wal_level = replica
-restore_command = '/usr/local/bin/wal-g.sh wal-fetch "%f" "%p"'
+```
+archive_mode: on
+archive_command: '/usr/local/bin/wal-g.sh wal-push %p'  
+archive_timeout: 60
+wal_level: replica
+restore_command: '/usr/local/bin/wal-g.sh wal-fetch "%f" "%p"'
 ```
 
 ここでは60秒間隔で設定した
@@ -112,7 +104,7 @@ tail -f /var/log/postgresql/postgresql-12-main.log
 
 ここではcronを使用する
 
-```baah
+```
 sudo -u postgres crontab -e
 ```
 
@@ -154,7 +146,7 @@ exit
 /etc/postgresql/12/main/conf.d/restore.confを作成し次のように書き込む
 
 ```bash
-restore_command = '/usr/local/bin/wal-g.sh wal-fetch "%f" "%p"
+restore_command: '/usr/local/bin/wal-g.sh wal-fetch "%f" "%p"
 ```
 
 ## 5. リストアする

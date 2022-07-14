@@ -1,18 +1,10 @@
-+++
-title = "code-serverをDocker Composeで動かす"
-date = "2022-02-25T17:54:02+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["docker", "linux", "code-server", "vscode"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2022", "2022-02"]
-+++
+---
+title: "code-serverをDocker Composeで動かす"
+date: "2022-02-25T17:54:02+09:00"
+tags: ["docker", "linux", "code-server", "vscode"]
+comments: true
+showToc: true
+---
 docker-composeでcode-serverを動かしてみる。
 
 ---
@@ -51,7 +43,7 @@ ARM64環境の場合は、`image`の部分を変更してください。
 
 ホストで`id`を実行し`user: "uid:gid"`で書き換えます。
 
-```term
+```
 $ id
 uid=1001(ubuntu) gid=1001(ubuntu)
 # この場合 user: "1001:1001"にする
@@ -67,7 +59,7 @@ docker compose up -d
 
 hogeの部分がランダムのパスワードになっています。
 
-```term
+```
 $ cat coder/.config/code-server/config.yaml
 bind-addr: 127.0.0.1:8080
 auth: password

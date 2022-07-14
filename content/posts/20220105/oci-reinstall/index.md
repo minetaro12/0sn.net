@@ -1,18 +1,10 @@
-+++
-title = "OCIのARMコンピュートインスタンスを削除せずにOSを再インストールする"
-date = "2022-01-05T18:19:41+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["oraclecloud", "linux"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2022", "2022-01"]
-+++
+---
+title: "OCIのARMコンピュートインスタンスを削除せずにOSを再インストールする"
+date: "2022-01-05T18:19:41+09:00"
+tags: ["oraclecloud", "linux"]
+comments: true
+showToc: true
+---
 OCIにはOSの再インストール機能等がないので、再インストールしたい場合はインスタンスごと作り直す必要があります。
 
 netboot.xyzを使うと再作成しなくてもOSを再インストールできるようなので試しました。
@@ -29,7 +21,7 @@ OracleCloudのARM64で確認しました。
 
 まずSSHでインスタンスにログインします。
 
-```term
+```
 $ ssh ubuntu@xxx.xxx.xxx.xxx -i ssh-key-xxxx-xx-xx.key
 ```
 
@@ -47,7 +39,7 @@ sudo cp <.efi file> /boot/efi
 
 こうなればOKです
 
-```term
+```
 $ sudo ls /boot/efi
 EFI  netboot.xyz.efi
 ```

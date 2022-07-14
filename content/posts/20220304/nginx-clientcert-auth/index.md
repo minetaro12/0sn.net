@@ -1,18 +1,10 @@
-+++
-title = "Nginxでクライアント証明書による認証を設定する"
-date = "2022-03-04T18:53:03+09:00"
-author = "minetaro12"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["linux", "nginx"]
-keywords = ["", ""]
-description = " "
-showFullContent = false
-readingTime = false
-comments = true
-toc = true
-archives = ["2022", "2022-03"]
-+++
+---
+title: "Nginxでクライアント証明書による認証を設定する"
+date: "2022-03-04T18:53:03+09:00"
+tags: ["linux", "nginx"]
+comments: true
+showToc: true
+---
 BASIC認証では不安なのでNginxでクライアント証明書を使った認証のやり方のメモ
 
 NginxとOpenSSLが必要です。
@@ -49,7 +41,7 @@ cd client_cert
 openssl genrsa 4096 > ca.key
 ```
 
-{{<code language="term" expand="Show" collapse="Hide" isCollapsed="true">}}
+```
 root@localhost:/etc/nginx/client_cert# openssl genrsa 4096 > ca.key
 Generating RSA private key, 4096 bit long modulus (2 primes)
 .....................................................................++++
@@ -58,7 +50,7 @@ e is 65537 (0x010001)
 
 root@localhost:/etc/nginx/client_cert# ls
 ca.key
-{{</code>}}
+```
 
 ### 2-2. CSRの作成
 
@@ -72,7 +64,7 @@ openssl req -new -key ca.key > ca.csr
 
 それ以外は任意で入力してください。
 
-{{<code language="term" expand="Show" collapse="Hide" isCollapsed="true">}}
+```
 root@localhost:/etc/nginx/client_cert# openssl req -new -key ca.key > ca.csr
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
@@ -96,7 +88,7 @@ An optional company name []:
 
 root@localhost:/etc/nginx/client_cert# ls
 ca.csr  ca.key
-{{</code>}}
+```
 
 ### 2-3. CAの証明書を作成
 
@@ -104,7 +96,7 @@ ca.csr  ca.key
 openssl x509 -days 3650 -req -signkey ca.key < ca.csr > ca.crt
 ```
 
-{{<code language="term" expand="Show" collapse="Hide" isCollapsed="true">}}
+```
 root@localhost:/etc/nginx/client_cert# openssl x509 -days 3650 -req -signkey ca.key < ca.csr > ca.crt
 Signature ok
 subject=C = JP, ST = Some-State, O = Server
@@ -112,11 +104,11 @@ Getting Private key
 
 root@localhost:/etc/nginx/client_cert# ls
 ca.crt  ca.csr  ca.key
-{{</code>}}
+```
 
 ### 2-4. シリアル番号の設定
 
-```term
+```
 echo 01 > ca.srl
 ```
 
@@ -128,7 +120,7 @@ echo 01 > ca.srl
 openssl genrsa 4096 > client.key
 ```
 
-{{<code language="term" expand="Show" collapse="Hide" isCollapsed="true">}}
+```
 root@localhost:/etc/nginx/client_cert# openssl genrsa 4096 > client.key
 Generating RSA private key, 4096 bit long modulus (2 primes)
 ...................................................................................................++++
@@ -137,7 +129,7 @@ e is 65537 (0x010001)
 
 root@localhost:/etc/nginx/client_cert# ls
 ca.crt  ca.csr  ca.key  ca.srl  client.key
-{{</code>}}
+```
 
 ### 3-2. CSRの作成
 
@@ -151,7 +143,7 @@ openssl req -new -key client.key > client.csr
 
 それ以外は任意で入力してください。
 
-{{<code language="term" expand="Show" collapse="Hide" isCollapsed="true">}}
+```
 root@localhost:/etc/nginx/client_cert# openssl req -new -key client.key > client.csr
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
@@ -175,7 +167,7 @@ An optional company name []:
 
 root@localhost:/etc/nginx/client_cert# ls
 ca.crt  ca.csr  ca.key  ca.srl  client.csr  client.key
-{{</code>}}
+```
 
 ### 3-3. CSRを署名
 
@@ -183,7 +175,7 @@ ca.crt  ca.csr  ca.key  ca.srl  client.csr  client.key
 openssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key < client.csr > client.crt
 ```
 
-{{<code language="term" expand="Show" collapse="Hide" isCollapsed="true">}}
+```
 root@localhost:/etc/nginx/client_cert# openssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key < client.csr > client.crt
 Signature ok
 subject=C = JP, ST = Some-State, O = Client
@@ -191,7 +183,7 @@ Getting CA Private Key
 
 root@localhost:/etc/nginx/client_cert# ls
 ca.crt  ca.csr  ca.key  ca.srl  client.crt  client.csr  client.key
-{{</code>}}
+```
 
 ## 4. PFXの作成
 
@@ -201,14 +193,14 @@ openssl pkcs12 -export -out client.pfx -inkey client.key -in client.crt -certfil
 
 インポートする際に使うパスワードを求められますが空のままでも大丈夫です。
 
-{{<code language="term" expand="Show" collapse="Hide" isCollapsed="true">}}
+```
 root@localhost:/etc/nginx/client_cert# openssl pkcs12 -export -out client.pfx -inkey client.key -in client.crt -certfile ca.crt
 Enter Export Password:
 Verifying - Enter Export Password:
 
 root@localhost:/etc/nginx/client_cert# ls
 ca.crt  ca.csr  ca.key  ca.srl  client.crt  client.csr  client.key  client.pfx
-{{</code>}}
+```
 
 ## 5. Nginxの設定
 
@@ -216,7 +208,7 @@ ca.crt  ca.csr  ca.key  ca.srl  client.crt  client.csr  client.key  client.pfx
 
 `ssl_verify_client`でクライアント証明書による認証を有効化
 
-```conf
+```
 server {
         :
         ssl_verify_client on;
