@@ -1,0 +1,23 @@
+<!-- OGP Img Check -->
+{{ $OGPPATH := "" }}
+{{ $OGPDEF := print $.Site.BaseURL "img/defogp.png" }}
+{{ if .IsPage }}
+  {{ $FILEPATH := .File.Path }} <!-- posts/20220101/hogehoge/index.md -->
+  {{ $FILEDIR := path.Dir $FILEPATH }} <!-- posts/20220101/hogehoge -->
+  {{ $FILEBASEDIR := path.Base $FILEDIR }} <!-- hogehoge -->
+  {{ $FILEDIR2 := path.Dir $FILEDIR }} <!-- posts/20220101 -->
+  {{ $DATE := path.Base $FILEDIR2 }} <!-- 20220101 -->
+
+  {{ $OGPFILE := print "static/ogp/" $DATE "-" $FILEBASEDIR ".png" }}
+  {{ $OGPFILE2 := print $.Site.BaseURL "ogp/" $DATE "-" $FILEBASEDIR ".png" }}
+
+  {{ if (fileExists $OGPFILE) }}
+    {{ $OGPPATH = $OGPFILE2 }}
+  {{ else }}
+    {{ $OGPPATH = $OGPDEF }}
+  {{ end }}
+{{ else }}
+  {{ $OGPPATH = $OGPDEF }}
+{{ end }}
+
+{{ return $OGPPATH }}
