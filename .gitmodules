@@ -1,4 +1,0 @@
-[submodule "themes/terminal"]
-	path = themes/terminal
-	url = https://github.com/minetaro12/hugo-theme-terminal
-	branch = master
