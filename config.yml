@@ -23,7 +23,7 @@ params:
   author: minetaro12
   # author: ["Me", "You"] # multiple authors
   images: ["/img/defogp.png"]
-  DateFormat: "2006 January 2"
+  DateFormat: "2006-01-02"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 
@@ -47,9 +47,9 @@ params:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
     favicon: "/favicon.ico"
-    #favicon16x16: "<link / abs url>"
-    #favicon32x32: "<link / abs url>"
-    #apple_touch_icon: "<link / abs url>"
+    favicon16x16: "/img/icons/icon-16x16.png"
+    favicon32x32: "/img/icons/icon-32x32.png"
+    apple_touch_icon: "/img/icons/apple-touch-icon.png"
     #safari_pinned_tab: "<link / abs url>"
 
   label:
@@ -74,8 +74,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Oさんのサイト"
-    #Content: Welcome to my blog
+    Title: "minetaro12"
+    Content: "Oさんのページ"
 
   socialIcons:
     - name: twitter
