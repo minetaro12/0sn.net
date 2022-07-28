@@ -1,6 +1,7 @@
 baseURL: "https://0sn.net/"
 title: minetaro12
 languageCode: "ja-jp"
+defaultContentLanguage: "ja"
 paginate: 5
 theme: PaperMod
 
