@@ -89,6 +89,14 @@ ArchLinux用のシステムパーティションを、Windowsのパーティシ�
 
 **デュアルブートは操作を誤るとWindowsのパーティションを破壊する恐れがあるので十分注意して行ってください**
 
+EFIパーティションはそのままでArchLinuxをインストールするパーティションのみフォーマットします。
+
+ArchLinuxをインストールするパーティションを`/dev/sdaB`とします。
+
+```
+# mkfs.ext4 /dev/sdaB
+```
+
 ## 6. ファイルシステムのマウント
 
 ```
@@ -118,7 +126,7 @@ ArchLinux用のシステムパーティションを、Windowsのパーティシ�
 ## 8. パッケージのインストール
 
 ``` 
-# pacstrap /mnt base linux linux-firmware vim dhcpcd
+# pacstrap /mnt base base-devel linux linux-firmware vim dhcpcd
 ```
 
 今回はエディタとdhcpcdを一緒にインストールしておきます。
@@ -181,7 +189,6 @@ ArchLinux用のシステムパーティションを、Windowsのパーティシ�
 ```
 127.0.0.1 localhost
 ::1       localhost
-127.0.1.1 hostname.localdomain hostname
 ```
 
 ## 14. rootパスワードの設定

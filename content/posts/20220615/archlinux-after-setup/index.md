@@ -19,7 +19,7 @@ showToc: true
 
 ## 2. sudoの設定
 
-sudoをインストール
+sudoが入っていない場合はインストール
 
 ```
 # pacman -S sudo
@@ -69,26 +69,30 @@ $ sudo pacman -S virtualbox-guest-utils
 $ sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji
 ```
 
-## 6. LightDMのインストール
+## 6. DEのインストール
+
+### Xfce4の場合
 
 ```
-$ sudo pacman -S lightdm lightdm-gtk-greeter
+$ sudo pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
 $ sudo systemctl enable lightdm
 ```
 
-## 7. Xfce4のインストール
+### KDEの場合
+
 
 ```
-$ sudo pacman -S xfce4 xfce4-goodies
+$ sudo pacman -S plasma konsole sddm
+$ sudo systemctl enable sddm
 ```
 
-## 8. fcitx5のインストール
+## 7. fcitx5のインストール
 
 ```
 $ sudo pacman -S fcitx5-im fcitx5-mozc
 ```
 
-`.pam_environment`に以下の記述をします。
+ホームディレクトリ直下の`.pam_environment`に以下の記述をします。
 
 ```.pam_environment
 GTK_IM_MODULE DEFAULT=fcitx
@@ -96,7 +100,7 @@ QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=@im=fcitx
 ```
 
-## 9. ロケールの設定
+## 8. ロケールの設定
 
 `/etc/locale.conf`を開き下のように変更します。
 
@@ -110,25 +114,6 @@ Xorgでのキーボードレイアウトの設定をします。
 $ sudo localectl set-x11-keymap jp
 ```
 
-## 10. 再起動
+## 9. 再起動
 
 `reboot`で再起動し、GUIでログインできればOK
-
----
-
-## KDEの場合
-
-[5. フォントのインストール](/posts/20220615/archlinux-after-setup/#5-%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)の後に、LightDMではなくSDDMをインストールします。
-
-```
-$ sudo pacman -S sddm
-$ sudo systemctl enable sddm
-```
-
-### KDEのインストール
-
-```
-$ sudo pacman -S plasma konsole
-```
-
-この後は[8. fcitx5のインストール](/posts/20220615/archlinux-after-setup/#8-fcitx5%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)と同じです。
