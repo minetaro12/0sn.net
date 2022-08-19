@@ -5,6 +5,16 @@ tags: ["linux", "archlinux"]
 comments: true
 showToc: true
 ---
+
+無線LANの場合はiwdを使ってネットワークに接続します。
+
+使い方は[こちら](https://wiki.archlinux.jp/index.php/Iwd#iwctl)
+
+```
+# systemctl start iwd
+# iwctl
+```
+
 ## 1. 一般ユーザーの作成
 
 ```
@@ -114,6 +124,16 @@ Xorgでのキーボードレイアウトの設定をします。
 $ sudo localectl set-x11-keymap jp
 ```
 
-## 9. 再起動
+## 9. NetworkManagerに切り替える
+
+GUIでネットワークの設定をするためにNetworkManagerに切り替えます。
+
+```
+$ sudo pacman -S networkmanager
+$ sudo systemctl disable dhcpcd
+$ sudo systemctl enable NetworkManager
+```
+
+## 10. 再起動
 
 `reboot`で再起動し、GUIでログインできればOK
