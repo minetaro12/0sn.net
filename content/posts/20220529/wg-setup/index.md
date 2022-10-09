@@ -116,3 +116,5 @@ PeerのAllowedIPsで`0.0.0.0/0`を指定するとすべての通信がWireGuard�
 `sudo wg-quick up wg0`で接続
 
 `sudo wg-quick down wg0`で切断
+
+`systemd-resolved`を使っている場合は、`openresolv`ではなく`systemd-resolvconf`をインストールしてください。(`/etc/resolv.conf`が上書きされるため)
