@@ -116,4 +116,16 @@ $ lxc exec lxc-ubuntu -- su -l
 
 # echo "export PULSE_SERVER=unix:/tmp/.pulse-native" >> .profile
 # . .profile
+# logout
 ```
+
+### 6. ホスト側でXサーバーにアクセスできるようにする
+
+**使い終わったら`xhost -`でもとに戻してください**
+
+```
+$ sudo pacman -S xorg-xhost
+$ xhost +
+```
+
+これでGUIアプリが動くようになりました
