@@ -5,18 +5,39 @@ tags: ["linux", "archlinux", "lxd"]
 comments: true
 showToc: true
 ---
-[ArchLinuxのリポジトリにあるパッケージ](https://www.archlinux.jp/packages/community/x86_64/lxd/)をインストールして使おうとしたところ、何故かうまく行かなかったので`snap`を使う。
+~~[ArchLinuxのリポジトリにあるパッケージ](https://www.archlinux.jp/packages/community/x86_64/lxd/)をインストールして使おうとしたところ、何故かうまく行かなかったので`snap`を使う~~
 
-## 1. Snapのインストール
+※追記：[この方法](https://wiki.archlinux.org/title/LXD#Setup_for_unprivileged_containers)で、できました
+
+## Snapを使ったインストール(推奨)
+
+### 1. Snapのインストール
 
 [wiki](https://wiki.archlinux.jp/index.php/Snap)にしたがってインストールすればOK。
 
-## 2. LXDのインストール
+### 2. LXDのインストール
 
 ```
 $ sudo snap install lxd
 
 $ sudo usermod -aG lxd <username> #一般ユーザーでも実行できるように
+```
+
+## 直接インストール
+
+### 1. LXDのインストール
+
+```
+$ sudo pacman -S lxd
+
+$ sudo usermod -aG lxd <username> #一般ユーザーでも実行できるように
+```
+
+### 2. 名前空間の設定
+
+```
+$ echo "root:1000000:1000000000" | sudo tee /etc/subuid
+$ echo "root:1000000:1000000000" | sudo tee /etc/subgid
 ```
 
 ## 使い方
