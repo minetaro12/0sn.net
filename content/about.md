@@ -35,8 +35,6 @@ Fingerprint
 
 GitHub,Keybaseから公開鍵を入手することができます
 ```
-$ gpg --fetch-keys https://0sn.net/pgp
-or
 $ gpg --fetch-keys https://github.com/minetaro12.gpg
 or
 $ gpg --fetch-keys https://keybase.io/minetaro12/pgp_keys.asc
