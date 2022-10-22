@@ -102,12 +102,12 @@ $ sudo systemctl enable sddm
 $ sudo pacman -S fcitx5-im fcitx5-mozc
 ```
 
-ホームディレクトリ直下の`.pam_environment`に以下の記述をします。
+`/etc/environment`に以下の記述をします。
 
-```.pam_environment
-GTK_IM_MODULE DEFAULT=fcitx
-QT_IM_MODULE  DEFAULT=fcitx
-XMODIFIERS    DEFAULT=@im=fcitx
+```/etc/environment
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 ```
 
 ## 8. ロケールの設定
