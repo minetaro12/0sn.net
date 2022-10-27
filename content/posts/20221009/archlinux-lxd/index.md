@@ -92,7 +92,7 @@ $ lxc config device add lxc-ubuntu mygpu gpu
 
 ```
 $ lxc exec lxc-ubuntu -- su -l
-# mkdir /tmp/xorg1
+# mkdir /mnt/xorg1
 # logout
 
 $ lxc config device add lxc-ubuntu Xsocket proxy \
