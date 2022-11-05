@@ -1,7 +1,7 @@
 ---
-title: "ArchLinuxインストール後の設定"
+title: "Arch Linuxインストール後の設定"
 date: "2022-06-15T15:10:48+09:00"
-tags: ["linux", "archlinux"]
+tags: ["linux", "arch linux"]
 comments: true
 showToc: true
 ---

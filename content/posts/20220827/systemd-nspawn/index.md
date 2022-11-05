@@ -6,7 +6,7 @@ comments: true
 showToc: true
 ---
 
-ArchLinuxで`systemd-nspawn`を使ってみた。
+Arch Linuxで`systemd-nspawn`を使ってみた。
 
 [wiki](https://wiki.archlinux.jp/index.php/Systemd-nspawn)のやり方でUbuntuを入れることもできるが、今回はLXDのイメージをそのまま使う。
 

@@ -1,11 +1,11 @@
 ---
-title: "ArchLinuxでLXDを使う"
+title: "Arch LinuxでLXDを使う"
 date: "2022-10-09T15:37:04+09:00"
-tags: ["linux", "archlinux", "lxd"]
+tags: ["linux", "arch linux", "lxd"]
 comments: true
 showToc: true
 ---
-~~[ArchLinuxのリポジトリにあるパッケージ](https://www.archlinux.jp/packages/community/x86_64/lxd/)をインストールして使おうとしたところ、何故かうまく行かなかったので`snap`を使う~~
+~~[Arch Linuxのリポジトリにあるパッケージ](https://www.archlinux.jp/packages/community/x86_64/lxd/)をインストールして使おうとしたところ、何故かうまく行かなかったので`snap`を使う~~
 
 ※追記：[この方法](https://wiki.archlinux.org/title/LXD#Setup_for_unprivileged_containers)で、できました
 

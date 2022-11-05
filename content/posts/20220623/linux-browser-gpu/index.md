@@ -5,7 +5,7 @@ tags: ["linux", "chrome", "chromium", "firefox"]
 comments: true
 showToc: true
 ---
-ThinkBook 13s Gen3(Ryzen7 5800U/ArchLinux)で確認しました。
+ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)で確認しました。
 
 `vainfo`コマンドでハードウェアデコードが使用可能なことを確認します。
 

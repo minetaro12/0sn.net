@@ -1,7 +1,7 @@
 ---
-title: "ArchLinuxのインストールメモ"
+title: "Arch Linuxのインストールメモ"
 date: "2022-06-15T14:38:22+09:00"
-tags: ["linux", "archlinux"]
+tags: ["linux", "arch linux"]
 comments: true
 showToc: true
 ---
@@ -83,15 +83,15 @@ UEFIの場合は`gdisk`を使います。
 
 **新しくEFIシステムパーティションを作らないでください**
 
-ArchLinux用のシステムパーティションを、Windowsのパーティションの後ろに作成します。
+Arch Linux用のシステムパーティションを、Windowsのパーティションの後ろに作成します。
 
 リカバリ用のパーティションがある場合があるので(画像だと`WINRE_DRV`)、**消したり動かしたりしないでください。**
 
 **デュアルブートは操作を誤るとWindowsのパーティションを破壊する恐れがあるので十分注意して行ってください**
 
-EFIパーティションはそのままでArchLinuxをインストールするパーティションのみフォーマットします。
+EFIパーティションはそのままでArch Linuxをインストールするパーティションのみフォーマットします。
 
-ArchLinuxをインストールするパーティションを`/dev/sdaB`とします。
+Arch Linuxをインストールするパーティションを`/dev/sdaB`とします。
 
 ```
 # mkfs.ext4 /dev/sdaB
@@ -107,7 +107,7 @@ ArchLinuxをインストールするパーティションを`/dev/sdaB`としま
 
 ### UEFI環境でWindowsとデュアルブートする場合
 
-すでにあるEFIシステムパーティションが`/dev/sdaA`、ArchLinuxをインストールするパーティションが`/dev/sdaB`だとします。
+すでにあるEFIシステムパーティションが`/dev/sdaA`、Arch Linuxをインストールするパーティションが`/dev/sdaB`だとします。
 
 ```
 # mount /dev/sdaB /mnt

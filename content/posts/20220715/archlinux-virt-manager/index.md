@@ -1,7 +1,7 @@
 ---
-title: "ArchLinuxでvirt-managerを使う"
+title: "Arch Linuxでvirt-managerを使う"
 date: "2022-07-15T11:41:03+09:00"
-tags: ["archlinux", "linux", "virt-manager"]
+tags: ["arch linux", "linux", "virt-manager"]
 comments: true
 showToc: true
 ---

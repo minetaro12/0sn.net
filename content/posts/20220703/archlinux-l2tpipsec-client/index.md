@@ -1,12 +1,12 @@
 ---
-title: "ArchLinuxでL2TP/IPSecに接続するときにハマった"
+title: "Arch LinuxでL2TP/IPSecに接続するときにハマった"
 date: "2022-07-03T17:44:13+09:00"
-tags: ["linux", "archlinux", "vpn"]
+tags: ["linux", "arch linux", "vpn"]
 comments: true
 showToc: true
 ---
 
-ArchLinuxでL2TP/IPSecのVPNに接続するのにかなりハマったのでメモ
+Arch LinuxでL2TP/IPSecのVPNに接続するのにかなりハマったのでメモ
 
 接続先がYAMAHAのルーター(自分の場合はRTX1200)の場合苦労するらしい
 

@@ -1,12 +1,12 @@
 ---
-title: "RaspberryPiにAlpineLinuxをヘッドレスインストール"
+title: "RaspberryPiにAlpine Linuxをヘッドレスインストール"
 date: "2021-11-27T14:27:56+09:00"
 tags: ["linux", "alpine", "raspberrypi"]
 comments: true
 showToc: true
 ---
 
-RaspberryPiにAlpineLinuxをヘッドレスインストールしてみます。
+RaspberryPiにAlpine Linuxをヘッドレスインストールしてみます。
 
 ディスクレスモードというのがあり、基本的にRAM上で動作しSDカードへの書き込みを抑えるようになってます。
 
