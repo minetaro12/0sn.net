@@ -15,8 +15,6 @@ Oさんです
 ## リンク集
 
 - Twitter: [@1osan_x](https://twitter.com/1osan_x)
-- Misskey: [@minetaro12](https://msk.minetaro12.com/@minetaro12)
-- Mastodon: [@minetaro12](https://mstdn.jp/@minetaro12)
 - GitHub: [@minetaro12](https://github.com/minetaro12)
 - GitLab: [@minetaro12](https://gitlab.com/minetaro12)
 - xda: [minetaro12](https://forum.xda-developers.com/m/minetaro12.11216215/)
