@@ -150,3 +150,12 @@ $ xhost +
 ```
 
 これでGUIアプリが動くようになりました
+
+## LXDコンテナのIPアドレスを固定する
+
+```
+$ lxc launch images:ubuntu/22.04 container
+$ lxc network attach lxdbr0 container eth0 eth0
+$ lxc config device set container eth0 ipv4.address=10.228.168.100
+$ lxc restart container
+```

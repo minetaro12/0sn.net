@@ -61,7 +61,9 @@ https://github.com/minetaro12/dotfiles
 
 `picom`は以下のようにして起動する。
 
-`exec --no-startup-id picom -b --experimental-backends`
+~~exec --no-startup-id picom -b --experimental-backends~~
+
+`exec --no-startup-id picom -b`
 
 `~/.config/picom.conf`では以下のように設定する。
 
@@ -69,6 +71,12 @@ https://github.com/minetaro12/dotfiles
 blur-method = "dual_kawase"
 backend = "glx" #これをしないと激重になる
 ```
+
+※2022/11/17追記
+
+v10で`--experimental-backends`がデフォルトで有効になった模様
+
+> [https://github.com/yshui/picom/releases/tag/v10](https://github.com/yshui/picom/releases/tag/v10)
 
 ### フローティングモードで起動させる
 
