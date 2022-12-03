@@ -1,4 +1,4 @@
-[submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/minetaro12/hugo-PaperMod
+[submodule "themes/hugo-osan-theme"]
+	path = themes/hugo-osan-theme
+	url = https://github.com/minetaro12/hugo-osan-theme
 	branch = master
