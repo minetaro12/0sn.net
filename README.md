@@ -2,4 +2,4 @@
 
 ## ビルド方法
 
-`hugo`
+`bash ./build.sh`
