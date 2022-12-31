@@ -12,8 +12,7 @@ showToc: true
 
 1\. OpenWrtのSDKをダウンロードして解凍
 
-[ここ](https://downloads.openwrt.org/)からターゲットのSDKをダウンロードして解凍する
-
+[ここ](https://downloads.openwrt.org/)からターゲットのSDKをダウンロードして解凍する  
 自分はGL-MT300N-V2で動かしたいので[これ](https://archive.openwrt.org/releases/21.02.0/targets/ramips/mt76x8/openwrt-sdk-21.02.0-ramips-mt76x8_gcc-8.4.0_musl.Linux-x86_64.tar.xz)をダウンロードした
 
 2\. リポジトリをクローン
@@ -41,22 +40,17 @@ showToc: true
 
 ## バイナリだけ欲しい場合(推奨)
 
-[これ](https://github.com/cloudflare/cloudflared)をクローン
-
-`GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -trimpath -ldflags "-s -w" ./cmd/cloudflared`でビルド
-
+[これ](https://github.com/cloudflare/cloudflared)をクローン  
+`GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -trimpath -ldflags "-s -w" ./cmd/cloudflared`でビルド  
 アーキテクチャは必要に応じて変更してください
 
 ## 動かす
 
-バイナリが20MBくらいあるので、exrootで拡張するかパッケージを解凍してtmp等別の場所に入れてうごかすことをおすすめします。
-
+バイナリが20MBくらいあるので、exrootで拡張するかパッケージを解凍してtmp等別の場所に入れてうごかすことをおすすめします。  
 ~~自分は`/etc/init.d/cloudflared`を作成して、起動時にバイナリをGithubからダウンロードするようにしました~~
 
-※2022/02/09追記
-
-起動時にダウンロードだと動かない場合があるので、`/etc/init.d/cloudflared`を作成しUSBメモリから読み込むようにしました。(tmuxが必要です)
-
+※2022/02/09追記  
+起動時にダウンロードだと動かない場合があるので、`/etc/init.d/cloudflared`を作成しUSBメモリから読み込むようにしました。(tmuxが必要です)  
 デーモン化する場合は`/root/.cloudflared`の中身を`/etc/cloudflared`にコピーする必要があります。
 
 ```bash

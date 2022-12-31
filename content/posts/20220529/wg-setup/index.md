@@ -43,14 +43,11 @@ net.ipv4.ip_forward = 1
 
 `/etc/wireguard/wg0.conf`を作成する
 
-VPNのインターフェースは`192.168.10.1/24`
-
-50000番で待ち受け
-
+VPNのインターフェースは`192.168.10.1/24`  
+50000番で待ち受け  
 クライアントは`192.168.10.2`とする
 
-PostUp PostDownはNATの設定なのでインターフェース名は適宜変更する
-
+PostUp PostDownはNATの設定なのでインターフェース名は適宜変更する  
 クライアントを追加する場合は、Peerを追加する
 
 ```
@@ -93,8 +90,7 @@ $ sudo systemctl start wg-quick@wg0
 
 ## 5. クライアントの設定
 
-クライアントにもWireGuardをインストール
-
+クライアントにもWireGuardをインストール  
 `/etc/wireguard/wg0.conf`を作成する
 
 ```
@@ -109,12 +105,10 @@ AllowedIPs = 192.168.0.0/24, 192.168.10.0/24 #WireGuardを経由するIPアド�
 EndPoint = #サーバーのIPアドレス:ポート
 ```
 
-PeerのAllowedIPsで`0.0.0.0/0`を指定するとすべての通信がWireGuard経由になる
-
+PeerのAllowedIPsで`0.0.0.0/0`を指定するとすべての通信がWireGuard経由になる  
 サーバーからクライアント、クライアントからクライアントを通すにはAllowedIPsにVPNインターフェースのアドレスを指定する必要がある(ここでは`192.168.10.0/24`)
 
-`sudo wg-quick up wg0`で接続
-
+`sudo wg-quick up wg0`で接続  
 `sudo wg-quick down wg0`で切断
 
 `systemd-resolved`を使っている場合は、`openresolv`ではなく`systemd-resolvconf`をインストールしてください。(`/etc/resolv.conf`が上書きされるため)

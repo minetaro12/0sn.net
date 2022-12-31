@@ -7,8 +7,7 @@ showToc: true
 ---
 BASIC認証では不安なのでNginxでクライアント証明書を使った認証のやり方のメモ
 
-NginxとOpenSSLが必要です。
-
+NginxとOpenSSLが必要です。  
 Cloudflareを使用している場合は動かないので注意してください。
 
 作成するファイル
@@ -23,8 +22,7 @@ Cloudflareを使用している場合は動かないので注意してくださ�
 
 ## 1. 作業ディレクトリの作成
 
-適当なディレクトリを作成します。
-
+適当なディレクトリを作成します。  
 rootユーザーで作業します。
 
 ```bash
@@ -58,10 +56,8 @@ ca.key
 openssl req -new -key ca.key > ca.csr
 ```
 
-`Organization Name`は必ず設定します。
-
-`Common Name`は必ず空にします。
-
+`Organization Name`は必ず設定します。  
+`Common Name`は必ず空にします。  
 それ以外は任意で入力してください。
 
 ```
@@ -137,10 +133,8 @@ ca.crt  ca.csr  ca.key  ca.srl  client.key
 openssl req -new -key client.key > client.csr
 ```
 
-`Organization Name`は{{<rawhtml>}}<u>必ずCAと違うものを設定してください。</u>{{</rawhtml>}}
-
-`Common Name`は必ず空にします。
-
+`Organization Name`は{{<rawhtml>}}<u>必ずCAと違うものを設定してください。</u>{{</rawhtml>}}  
+`Common Name`は必ず空にします。  
 それ以外は任意で入力してください。
 
 ```
@@ -204,8 +198,7 @@ ca.crt  ca.csr  ca.key  ca.srl  client.crt  client.csr  client.key  client.pfx
 
 ## 5. Nginxの設定
 
-`ssl_client_certificate`に`ca.crt`を指定
-
+`ssl_client_certificate`に`ca.crt`を指定  
 `ssl_verify_client`でクライアント証明書による認証を有効化
 
 ```
@@ -227,16 +220,14 @@ sudo systemctl restart nginx
 
 ## 6. クライアントの設定
 
-先ほど作成した`client.pfx`を何らかの方法でクライアント側に転送し、インストールします。
-
+先ほど作成した`client.pfx`を何らかの方法でクライアント側に転送し、インストールします。  
 クライアント証明書のインストール方法はOSやブラウザによって違うので省略します。
 
 [PKCS12形式の証明書をインポートする方法(Google Chrome)](https://jp.globalsign.com/support/clientcert/manual-browser/pkcs12-import-chrome.html)
 
 [PKCS12形式の証明書をインポートする方法(Mozilla Firefox)](https://jp.globalsign.com/support/clientcert/manual-browser/pkcs12-import-firefox.html)
 
-[4. PFXの作成](#4-pfxの作成)でパスワードを設定した場合は、インポート時に求められるので入力します。
-
+[4. PFXの作成](#4-pfxの作成)でパスワードを設定した場合は、インポート時に求められるので入力します。  
 設定していない場合は空のまま進めます。
 
 ## 7. アクセスできることを確認する

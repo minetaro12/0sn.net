@@ -13,8 +13,7 @@ netboot.xyzを使うと再作成しなくてもOSを再インストールでき�
 
 ## 環境
 
-OracleCloudのARM64で確認しました。
-
+OracleCloudのARM64で確認しました。  
 再インストールOSはdebianのみ確認しました。
 
 ## 1. SSHでログイン
@@ -56,8 +55,7 @@ SSH接続はまだ切らないでください。
 
 ![console2](oci-console2.jpg)
 
-ここでSSHから`sudo reboot`します。
-
+ここでSSHから`sudo reboot`します。  
 するとコンソール画面に起動ログが流れるので、ESCを連打します。
 
 ![ocibootmenu](oci-bootmenu.jpg)
@@ -72,8 +70,7 @@ netboot.xyz.efiを選択すると次のような画面になります。
 
 ### {{<rawhtml>}}<span style="color: red; ">※OSの再インストールを行うとディスク上のすべてのデータが削除されます。</span>{{</rawhtml>}}
 
-Linux Network Installs→Debian→インストールしたいバージョンを選択→Text Based Installに進みます。
-
+Linux Network Installs→Debian→インストールしたいバージョンを選択→Text Based Installに進みます。  
 しばらくするとDebianのテキストベースインストーラが起動するので、画面に従ってインストールします。
 
 AMD64インスタンスでは何故かインストーラが起動しませんでした。

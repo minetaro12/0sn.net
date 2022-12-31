@@ -6,8 +6,7 @@ comments: true
 showToc: true
 ---
 
-Arch LinuxでL2TP/IPSecのVPNに接続するのにかなりハマったのでメモ
-
+Arch LinuxでL2TP/IPSecのVPNに接続するのにかなりハマったのでメモ  
 接続先がYAMAHAのルーター(自分の場合はRTX1200)の場合苦労するらしい
 
 ## NetworkManagerのバージョン
@@ -16,8 +15,7 @@ Arch LinuxでL2TP/IPSecのVPNに接続するのにかなりハマったのでメ
 
 ## networkmanager-l2tpとlibreswanを使う
 
-strongswanではうまくいかないようなので、networkmanager-l2tpとlibreswanをインストールする。
-
+strongswanではうまくいかないようなので、networkmanager-l2tpとlibreswanをインストールする。  
 libreswanはAURにあります。
 
 `yay -S networkmanager-l2tp libreswan`
@@ -28,8 +26,7 @@ libreswanはAURにあります。
 
 ## xl2tpdではなくkl2tpdを使う
 
-xl2tpdでは`bad packet`となってしまい切断されるのでGoLang製のkl2tpdを使う。
-
+xl2tpdでは`bad packet`となってしまい切断されるのでGoLang製のkl2tpdを使う。  
 [https://github.com/katalix/go-l2tp](https://github.com/katalix/go-l2tp)
 
 ```
@@ -45,8 +42,7 @@ networkmanager-l2tpはkl2tpdを優先的に使うようになっているので�
 
 ![ipsec-set](ipsec-set.jpg)
 
-`Remote ID`はサーバーVPNインターフェースのIPアドレスや`0.0.0.0`を指定しないと接続できない場合がある。
-
+`Remote ID`はサーバーVPNインターフェースのIPアドレスや`0.0.0.0`を指定しないと接続できない場合がある。  
 `Phase1 Algorithms`と`Phase2 Algorithms`は自分の場合はこれで接続できた。
 
 [https://github.com/nm-l2tp/NetworkManager-l2tp/wiki/Known-Issues#querying-vpn-server-for-its-ikev1-algorithm-proposals](https://github.com/nm-l2tp/NetworkManager-l2tp/wiki/Known-Issues#querying-vpn-server-for-its-ikev1-algorithm-proposals)の方法で、VPNサーバーで使えるアルゴリズムを調べることもできる。

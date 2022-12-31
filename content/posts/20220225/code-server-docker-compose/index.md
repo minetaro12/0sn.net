@@ -13,8 +13,7 @@ docker-composeでcode-serverを動かしてみる。
 
 まずDockerとDocker Composeをインストールする必要があります。
 
-下の記事で解説しています。
-
+下の記事で解説しています。  
 [Ubuntu20.04へのDockerのインストール](https://0sn.net/posts/20210731/docker-install/)
 
 ## 2. ディレクトリの作成&設定
@@ -35,10 +34,8 @@ vim docker-compose.yml
 
 {{<rawhtml>}}<script src="https://gist.github.com/minetaro12/cf0ee2223d891fbc001ae6b3440cf8d0.js?file=docker-compose.yml"></script>{{</rawhtml>}}
 
-今回の例では[自分で作成したイメージ](https://github.com/minetaro12/deploy-code-server)を使うことにします。(NodejsとHugoがインストール済み)
-
-ARM64環境の場合は、`image`の部分を変更してください。
-
+今回の例では[自分で作成したイメージ](https://github.com/minetaro12/deploy-code-server)を使うことにします。(NodejsとHugoがインストール済み)  
+ARM64環境の場合は、`image`の部分を変更してください。  
 パスワードを設定する場合は`environment`の`password`部分を変更します。(未設定の場合はランダムなパスワードになります)
 
 ホストで`id`を実行し`user: "uid:gid"`で書き換えます。
@@ -55,8 +52,7 @@ uid=1001(ubuntu) gid=1001(ubuntu)
 docker compose up -d
 ```
 
-`docker-compose.yml`でパスワードを設定していない場合は確認します。
-
+`docker-compose.yml`でパスワードを設定していない場合は確認します。  
 hogeの部分がランダムのパスワードになっています。
 
 ```
@@ -67,12 +63,9 @@ password: hoge
 cert: false
 ```
 
-パスワードを変更する場合は`config.yml`で変更します。
-
-また、パスワード認証を無効化したい場合は`auth: password`を`auth: none`に変更します。
-
-パスワードを変更したり無効にした場合は`docker compose restart`で再起動します。
-
+パスワードを変更する場合は`config.yml`で変更します。  
+また、パスワード認証を無効化したい場合は`auth: password`を`auth: none`に変更します。  
+パスワードを変更したり無効にした場合は`docker compose restart`で再起動します。  
 ブラウザで`127.0.0.1:8080`にアクセスすると表示されます。
 
 ## Nginxを使ってリバースプロキシしたい場合

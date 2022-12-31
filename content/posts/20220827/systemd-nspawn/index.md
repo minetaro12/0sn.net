@@ -12,10 +12,8 @@ Arch Linuxで`systemd-nspawn`を使ってみた。
 
 ## 1. イメージのダウンロード
 
-[ここ](https://us.lxd.images.canonical.com/images/)から使いたいディストリの`rootfs.tar.xz`をダウンロードする。
-
-その後、ディレクトリを作成しそこに解凍する。(解凍する時は必ずsudoをつけること)
-
+[ここ](https://us.lxd.images.canonical.com/images/)から使いたいディストリの`rootfs.tar.xz`をダウンロードする。  
+その後、ディレクトリを作成しそこに解凍する。(解凍する時は必ずsudoをつけること)  
 今回はUbuntu 22.04をダウンロードした。
 
 ```
@@ -42,8 +40,7 @@ $ sudo systemd-nspawn -D ubuntu
 $ sudo systemd-nspawn -bD ubuntu
 ```
 
-ここでログインプロンプトが表示されるので`root`で先程設定したパスワードでログインする。
-
+ここでログインプロンプトが表示されるので`root`で先程設定したパスワードでログインする。  
 `systemd-networkd`を使っていて`--network-veth`を指定して起動した場合は、自動的に仮想イーサネットリンクが作成されます。
 
 ## 名前解決ができない問題
@@ -70,8 +67,7 @@ PING 0sn.net (104.21.73.60) 56(84) bytes of data.
 
 **ホスト側で操作します。**
 
-`/var/lib/machines`の中にrootfsを解凍するか、シンボリックリンクを張ります。
-
+`/var/lib/machines`の中にrootfsを解凍するか、シンボリックリンクを張ります。  
 `/media/data/ubuntu`にrootfsがある場合の例
 
 ```
@@ -115,10 +111,8 @@ $ sudo cp /lib/systemd/network/80-container-ve.network /etc/systemd/network/80-c
 $ sudoedit /etc/systemd/network/80-container-ve.network
 ```
 
-`Address=0.0.0.0/28`となっている部分を変更します。
-
-ここでは`Address=172.16.10.1/24`とします。
-
+`Address=0.0.0.0/28`となっている部分を変更します。  
+ここでは`Address=172.16.10.1/24`とします。  
 下にこの設定も追加します。
 
 ```
@@ -127,8 +121,7 @@ PoolOffset=100
 PoolSize=50
 ```
 
-`sudo networkctl reload`で再読込
-
+`sudo networkctl reload`で再読込  
 コンテナを再起動、またはコンテナ内で`networkctl reload`をすると自動的に新しいIPアドレスがDHCPで取得されます。
 
 ## コンテナのIPアドレスを固定する
@@ -142,8 +135,7 @@ PoolSize=50
 # vim /etc/systemd/network/80-container-host0.network
 ```
 
-下のように編集します。
-
+下のように編集します。  
 アドレス部分は[ここ](#仮想イーサネットリンクのipアドレス範囲を変更する)で設定した場合のものです。
 
 ```

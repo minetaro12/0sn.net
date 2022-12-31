@@ -8,38 +8,31 @@ showToc: true
 
 こちらのサイトを参考にしました。
 
-[WAL-GでオブジェクトストレージにPostgreSQLをバックアップしよう](https://blog.noellabo.jp/entry/2019/03/05/yMjQeU9JXHxcyHTL)
-
-[MastodonのPostgreSQLのDatabaseをWAL-Gでオブジェクトストレージにバックアップ](https://qiita.com/atsu1125/items/676d24c0473ad94b3f2b)
-
+[WAL-GでオブジェクトストレージにPostgreSQLをバックアップしよう](https://blog.noellabo.jp/entry/2019/03/05/yMjQeU9JXHxcyHTL)  
+[MastodonのPostgreSQLのDatabaseをWAL-Gでオブジェクトストレージにバックアップ](https://qiita.com/atsu1125/items/676d24c0473ad94b3f2b)  
 [WAL-G で PostgreSQL の Backup や Replica 作成](https://blog.1q77.com/2019/06/wal-g/)
 
 ***
 
 ## 環境
 
-OracleCloudのA1インスタンス
-
-Ubuntu20.04LTS
-
+OracleCloudのA1インスタンス  
+Ubuntu20.04LTS  
 PostgreSQL12
 
 Misskeyのデータベースをバックアップします
 
 ***
 
-## 1. WAL-Gをインストールする
+### 1. WAL-Gをインストールする
 
-[ここ](https://github.com/wal-g/wal-g/releases)からバイナリをダウンロードして/usr/local/binに配置
-
-ARM64向けはないので[ここ](https://github.com/wal-g/wal-g/blob/master/docs/PostgreSQL.md)を参考にビルドする
-
+[ここ](https://github.com/wal-g/wal-g/releases)からバイナリをダウンロードして/usr/local/binに配置  
+ARM64向けはないので[ここ](https://github.com/wal-g/wal-g/blob/master/docs/PostgreSQL.md)を参考にビルドする  
 実行権限を付与する
 
-## 2. 環境変数の設定
+### 2. 環境変数の設定
 
-上記のサイトを参考に/usr/local/binにwal-g.shを配置
-
+上記のサイトを参考に/usr/local/binにwal-g.shを配置  
 オブジェクトストレージを使用するので次のように書き込む
 
 ```bash
@@ -65,7 +58,7 @@ sudo chmod +x /usr/local/bin/wal-g.sh
 
 必ず実行権限を付与する
 
-## 3. フルバックアップしてみる
+### 3. フルバックアップしてみる
 
 ```bash
 sudo -u postgres wal-g.sh backup-push /var/lib/postgresql/12/main
@@ -79,7 +72,7 @@ wal-g.sh backup-list
 
 これでバックアップができていれば成功
 
-## 4. 差分バックアップの設定
+### 4. 差分バックアップの設定
 
 /etc/postgresql/12/main/conf.d/archive.confを作成し次のように書き込む
 
@@ -100,7 +93,7 @@ tail -f /var/log/postgresql/postgresql-12-main.log
 
 エラーが出ずにバックアップできていればOK
 
-## 5. 定期的にフルバックアップする
+### 5. 定期的にフルバックアップする
 
 ここではcronを使用する
 
@@ -122,11 +115,11 @@ sudo -u postgres crontab -e
 
 別マシンでバックアップ元と同じバージョンのPostgreSQLをインストールする
 
-## 1. WAL-Gをインストールし設定ファイルをコピーする
+### 1. WAL-Gをインストールし設定ファイルをコピーする
 
 バックアップ設定時と同じようにインストールしwal-g.shを/usr/local/binに配置する
 
-## 2. クラスタの作成
+### 2. クラスタの作成
 
 クラスタを作成してデータディレクトリを空にする
 
@@ -137,11 +130,11 @@ rm -rf /var/lib/postgresql/12/test/*
 exit
 ```
 
-## 3. 設定ファイルの編集
+### 3. 設定ファイルの編集
 
 必要に応じて/etc/postgresql/12/test/postgresql.confの編集をする
 
-## 4. 差分復元コマンドの設定
+### 4. 差分復元コマンドの設定
 
 /etc/postgresql/12/main/conf.d/restore.confを作成し次のように書き込む
 
@@ -149,7 +142,7 @@ exit
 restore_command: '/usr/local/bin/wal-g.sh wal-fetch "%f" "%p"
 ```
 
-## 5. リストアする
+### 5. リストアする
 
 次のコマンドで最新のフルバックアップをリストアする
 

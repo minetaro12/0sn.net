@@ -5,14 +5,10 @@ tags: ["cloudflare", "web"]
 comments: true
 showToc: false
 ---
-Cloudflare Pages自体は前から知っていたのですが、ビルドの速度が非常に遅くあまり使っていませんでした。
-
-しかし最近見たところ高速ビルドなるオプションがありました。
-
-[Cloudflare Pages Fast Builds - Open Beta](https://community.cloudflare.com/t/cloudflare-pages-fast-builds-open-beta/359897)
-
-試してみると今までデプロイに5分ほどかかっていたところ、なんと30秒ほど(このサイトの場合)でデプロイが完了しました。
-
+Cloudflare Pages自体は前から知っていたのですが、ビルドの速度が非常に遅くあまり使っていませんでした。  
+しかし最近見たところ高速ビルドなるオプションがありました。  
+[Cloudflare Pages Fast Builds - Open Beta](https://community.cloudflare.com/t/cloudflare-pages-fast-builds-open-beta/359897)  
+試してみると今までデプロイに5分ほどかかっていたところ、なんと30秒ほど(このサイトの場合)でデプロイが完了しました。  
 表示速度的にはCloudflare Pagesの方が高速なためVercelから移行しました。
 
 ---

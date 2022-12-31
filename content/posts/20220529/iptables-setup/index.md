@@ -5,16 +5,13 @@ tags: ["linux", "iptables"]
 comments: true
 showToc: true
 ---
-iptablesのセットアップメモ
-
+iptablesのセットアップメモ  
 Ubuntu/Debian,IPv4前提
 
 ## 1. iptablesのインストール
 
-`sudo apt update&&sudo apt install iptables iptables-persistent`
-
-`iptables-persistent`は設定保存のため
-
+`sudo apt update&&sudo apt install iptables iptables-persistent`  
+`iptables-persistent`は設定保存のため  
 インストール中に`/etc/iptables/rules.v4`に設定を保存するか聞かれるのでYes
 
 ## 2. 設定 

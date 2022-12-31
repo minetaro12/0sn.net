@@ -5,6 +5,5 @@ tags: ["hugo","web"]
 comments: true
 showToc: false
 ---
-Hugoテーマを自作のものに変更を行いました。
-
+Hugoテーマを自作のものに変更を行いました。  
 テーマのリポジトリは[こちら](https://github.com/minetaro12/hugo-osan-theme)

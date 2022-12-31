@@ -8,42 +8,32 @@ showToc: false
 
 OracleCloudのA1インスタンスで確認
 
-必要なパッケージのインストール
-
+必要なパッケージのインストール  
 `sudo apt install -y apt-transport-https ca-certificates curl software-properties-common`
 
-GPGキーの追加
-
+GPGキーの追加  
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
 
-リポジトリを追加
-
-`sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu focal stable"`
-
+リポジトリを追加  
+`sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu focal stable"`  
 ※コードネームやアーキテクチャは環境により書き換える
 
-パッケージのアップデート
-
+パッケージのアップデート  
 `sudo apt update`
 
-Dockerをインストール
-
+Dockerをインストール  
 `sudo apt install docker-ce`
 
 ここから下はDockerをrootなしで動かすための作業
 
-ユーザーをdockerグループに追加
-
-`sudo gpasswd -a ubuntu docker`
-
+ユーザーをdockerグループに追加  
+`sudo gpasswd -a ubuntu docker`  
 ※ユーザー名は環境により書き換える
 
-ソケットファイルの権限を変える
-
+ソケットファイルの権限を変える  
 `sudo chmod 666 /var/run/docker.sock`
 
-一般ユーザーで実行できることを確認
-
+一般ユーザーで実行できることを確認  
 `docker ps`
 
 ※2021/8/5追記　公式なものでcompose cliが使える

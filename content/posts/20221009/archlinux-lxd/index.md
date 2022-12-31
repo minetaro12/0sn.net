@@ -74,10 +74,8 @@ $ lxc image ls images:archlinux
 
 ## LXDコンテナでGUIアプリを使う
 
-[https://wiki.archlinux.jp/index.php/LXD#Use_Wayland_and_Xorg_applications](https://wiki.archlinux.jp/index.php/LXD#Use_Wayland_and_Xorg_applications)
-
-ホストでXorgが動いている場合の方法です
-
+[https://wiki.archlinux.jp/index.php/LXD#Use_Wayland_and_Xorg_applications](https://wiki.archlinux.jp/index.php/LXD#Use_Wayland_and_Xorg_applications)  
+ホストでXorgが動いている場合の方法です  
 lxc-ubuntuという名前のコンテナの例です。
 
 ### 1. GPUを使えるようにする
@@ -108,8 +106,7 @@ $ lxc config device add lxc-ubuntu Xsocket proxy \
 
 ### 3. コンテナ内でソケットのシンボリックリンクを張る
 
-この操作はコンテナが起動する度に必要です。
-
+この操作はコンテナが起動する度に必要です。  
 面倒な場合はデーモン化したりしてください。
 
 ```

@@ -7,8 +7,7 @@ showToc: true
 ---
 ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)で確認しました。
 
-`vainfo`コマンドでハードウェアデコードが使用可能なことを確認します。
-
+`vainfo`コマンドでハードウェアデコードが使用可能なことを確認します。  
 デスクトップ環境はXorgです。
 
 ## Chrome/Chromiumの場合
@@ -19,10 +18,8 @@ ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)で確認しました。
 
 ~~**サンドボックスを無効にする必要があるので非推奨です**~~
 
-`about:config`で`media.ffmpeg.vaapi.enabled`をtrueにします。
-
+`about:config`で`media.ffmpeg.vaapi.enabled`をtrueにします。  
 ~~環境変数に`MOZ_DISABLE_RDD_SANDBOX=1`を設定してFirefoxを起動します。~~
 
-追記(2022/09/01)
-
+※追記(2022/09/01)  
 最近のバージョンではサンドボックスを無効にしなくても動作すると思われます。

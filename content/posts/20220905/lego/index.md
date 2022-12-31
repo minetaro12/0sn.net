@@ -10,20 +10,15 @@ certbotの代わりにLegoを使ってみます。
 
 ## インストール
 
-Releasesからダウンロードします。
-
-[https://github.com/go-acme/lego](https://github.com/go-acme/lego)
-
+Releasesからダウンロードします。  
+[https://github.com/go-acme/lego](https://github.com/go-acme/lego)  
 シングルバイナリなので`/usr/local/bin`に配置するだけです。
 
 ## シェルスクリプトの作成
 
-コマンドを直接入力でもできますが、シェルスクリプトにしたほうが楽です。
-
-今回はCloudflareのDNSを使って証明書を取得します。
-
-[以前の記事](/posts/20220217/cloudflaredns-certbot/)と同じようにAPIトークンを先に取得しておきます。
-
+コマンドを直接入力でもできますが、シェルスクリプトにしたほうが楽です。  
+今回はCloudflareのDNSを使って証明書を取得します。  
+[以前の記事](/posts/20220217/cloudflaredns-certbot/)と同じようにAPIトークンを先に取得しておきます。  
 webrootモードでやることも可能です。
 
 ### Let's Encrypt
@@ -63,10 +58,8 @@ CF_DNS_API_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
   -a run
 ```
 
-シェルスクリプトを実行すると取得ができます。
-
-このシェルスクリプトでは`/usr/local/etc/lego/data`に証明書やアカウント情報が保存されます。
-
+シェルスクリプトを実行すると取得ができます。  
+このシェルスクリプトでは`/usr/local/etc/lego/data`に証明書やアカウント情報が保存されます。  
 アクセストークン等が含まれているのでパーミッションに注意して保存します。
 
 ## 証明書のリストを表示

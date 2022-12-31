@@ -6,8 +6,7 @@ comments: true
 showToc: true
 ---
 
-RaspberryPiにAlpine Linuxをヘッドレスインストールしてみます。
-
+RaspberryPiにAlpine Linuxをヘッドレスインストールしてみます。  
 ディスクレスモードというのがあり、基本的にRAM上で動作しSDカードへの書き込みを抑えるようになってます。
 
 ***
@@ -28,8 +27,7 @@ Gpartedでも何でも良いので画像のような感じでSDカードのパ�
 
 ![part](alpine-part.jpg)
 
-先頭に256MBのパーティションを作成しFAT32でフォーマット、残りはすべてext4のパーティションにします。
-
+先頭に256MBのパーティションを作成しFAT32でフォーマット、残りはすべてext4のパーティションにします。  
 ext4の方は、ユーザーのホームディレクトリの永続化に使います。
 
 ## 2. ファイルのダウンロード＆解凍
@@ -38,12 +36,9 @@ ext4の方は、ユーザーのホームディレクトリの永続化に使い�
 
 今回はaarch64を使いました。
 
-[ここ](https://github.com/davidmytton/alpine-linux-headless-raspberrypi/releases/download/2021.06.23/headless.apkovl.tar.gz)からヘッドレスインストールに必要なファイルをダウンロードします。
-
-OSイメージは解凍し、中身を先ほど作成したFAT32のパーティションにコピーします。
-
-ヘッドレスインストールに必要なファイルは解凍せずに、そのままFAT32のパーティションにコピーします。
-
+[ここ](https://github.com/davidmytton/alpine-linux-headless-raspberrypi/releases/download/2021.06.23/headless.apkovl.tar.gz)からヘッドレスインストールに必要なファイルをダウンロードします。  
+OSイメージは解凍し、中身を先ほど作成したFAT32のパーティションにコピーします。  
+ヘッドレスインストールに必要なファイルは解凍せずに、そのままFAT32のパーティションにコピーします。  
 1個目のパーティションのファイルは画像のようになります。
 
 ![files](alpine-files.jpg)
@@ -52,10 +47,8 @@ WiFiを使用したい場合はFAT32のパーティション直下に`wifi.txt`�
 
 ## 3. 起動
 
-RaspberryPiにSDカードとLANケーブルを差し込み、電源を入れます。
-
-しばらくしたらDHCPサーバー（ルーター）でIPアドレスを確認します。
-
+RaspberryPiにSDカードとLANケーブルを差し込み、電源を入れます。  
+しばらくしたらDHCPサーバー（ルーター）でIPアドレスを確認します。  
 もしくは作業PCからnmapを使って確認します。
 
 ```
@@ -71,8 +64,7 @@ Nmap done: 256 IP addresses (3 hosts up) scanned in 2.31 seconds
 
 ## 4. セットアップ
 
-IPアドレスがわかったらSSHでログインします。
-
+IPアドレスがわかったらSSHでログインします。  
 初期設定ではrootアカウントのみでパスワード無しです。
 
 ```
@@ -90,8 +82,7 @@ You may change this message by editing /etc/motd.
 localhost:~#
 ```
 
-ここで`setup-alpine`を実行し画面の指示に従ってセットアップします。
-
+ここで`setup-alpine`を実行し画面の指示に従ってセットアップします。  
 最後の方で設定の保存先を聞かれますが、そのままエンターでOKです。
 
 ```
@@ -122,8 +113,7 @@ rc-update del local default
 rm /etc/local.d/headless.start
 ```
 
-冒頭で述べたように基本的にRAM上で動作するので、再起動するともとに戻ってしまいます。
-
+冒頭で述べたように基本的にRAM上で動作するので、再起動するともとに戻ってしまいます。  
 そこで`lbu commit -d`を実行してから再起動します。
 
 ```bash
@@ -209,8 +199,7 @@ sudoをインストールします。（エディターもついでに）
 apk add sudo nano
 ```
 
-`wheel`グループのユーザーがsudoコマンドを実行できるようにします。
-
+`wheel`グループのユーザーがsudoコマンドを実行できるようにします。  
 `# %wheel ALL=(ALL) ALL`のコメントを外してください。
 
 ```bash

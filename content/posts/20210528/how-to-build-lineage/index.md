@@ -29,8 +29,7 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 ```
 
-.profileを編集して$HOME/binをPACHに追加
-
+.profileを編集して$HOME/binをPACHに追加  
 `nano ~/.profile`
 
 以下の記述を追加（同じ記述があれば不要）
@@ -41,8 +40,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 ```
 
-環境の更新
-
+環境の更新  
 `source ~/.profile`
 
 ## 2. 作業用ディレクトリの作成
@@ -59,48 +57,38 @@ git config --global user.name "android"
 git config --global user.email "android"
 ```
 
-リポジトリの初期化
-
+リポジトリの初期化  
 `repo init -u https://github.com/LineageOS/android.git -b lineage-17.1`
 
-ソースコードの取得（環境によっては非常に時間がかかります）
-
+ソースコードの取得（環境によっては非常に時間がかかります）  
 `repo sync --force-sync`
 
 ## 3. 端末固有のソースコードを取得
 
-local_manifestsに書き込むことでrepo sync時に同期されます
-
-XperiaZ5,Z5c向けに作ったものがあるので今回はこれを利用する↓
-
+local_manifestsに書き込むことでrepo sync時に同期されます  
+XperiaZ5,Z5c向けに作ったものがあるので今回はこれを利用する↓  
 [https://github.com/minetaro12/kitakami_local_manifests](https://github.com/minetaro12/kitakami_local_manifests)
 
 ※他の端末向けの書き方はわかりやすく書いているサイトがあるので、[こちら](https://dev.maud.io/entry/2019/07/18/howto-build-lineageos-16-0/index.html)を参照
 
-manifestを置くディレクトリを作成
-
+manifestを置くディレクトリを作成  
 `mkdir -p .repo/local_manifests`
 
-local_manifestsディレクトリ内にmanifestを置く
-
+local_manifestsディレクトリ内にmanifestを置く  
 例:`~/lineage/.repo/local_manifests/sumire.xml`
 
-再度ソースコードを取得
-
+再度ソースコードを取得  
 `repo sync --force-sync`
 
 ## 4. ビルド
 
-以下のコマンドを実行してビルドの準備（？）をする
-
+以下のコマンドを実行してビルドの準備（？）をする  
 `. build/envsetup.sh`
 
-以下のコマンドでビルドが始まります
-
+以下のコマンドでビルドが始まります  
 `brunch sumire 2>&1 | tee lineage_$(date '+%Y%m%d_%H-%M-%S').log`
 
-Z5cの場合はsumireをsuzuranにする
-
+Z5cの場合はsumireをsuzuranにする  
 他の端末の場合はsumireをその端末のコードネームにする
 
 無事に終了するとbuild completed successfullyが表示されます

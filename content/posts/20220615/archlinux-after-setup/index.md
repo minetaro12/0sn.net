@@ -6,8 +6,7 @@ comments: true
 showToc: true
 ---
 
-無線LANの場合はiwdを使ってネットワークに接続します。
-
+無線LANの場合はiwdを使ってネットワークに接続します。  
 使い方は[こちら](https://wiki.archlinux.jp/index.php/Iwd#iwctl)
 
 ```
@@ -35,8 +34,7 @@ sudoが入っていない場合はインストール
 # pacman -S sudo
 ```
 
-`EDITOR=vim visudo`で`# %wheel ALL=(ALL) AL`をコメントを解除してください。
-
+`EDITOR=vim visudo`で`# %wheel ALL=(ALL) AL`をコメントを解除してください。  
 ユーザーをwheelグループに追加します。
 
 ```
