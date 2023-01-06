@@ -1,7 +1,7 @@
 ---
 title: "LineageOS17.1のビルド（XperiaZ5)"
 date: "2021-05-28T19:06:24+09:00"
-tags: ["lineageos"]
+tags: ["lineageos", "android"]
 comments: true
 showToc: true
 ---
