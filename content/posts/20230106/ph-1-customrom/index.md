@@ -52,7 +52,7 @@ fastboot flash boot <リカバリーイメージのファイル>
 電源を切り、音量アップを押しながら電源を入れます。  
 下のような画面になります。
 
-{{<img src="los-recovery.webp" alt="los-recovery" width="10%">}}
+{{<img src="los-recovery.webp" alt="los-recovery" width="15%">}}
 
 ### 4. ROM本体を焼く
 最初に`Factory Reset`→`Format data / factory reset`で初期化をします。  
