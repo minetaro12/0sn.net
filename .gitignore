@@ -92,3 +92,5 @@ hugo.linux
 /.hugo_build.lock
 
 /pagefind_extended
+/postlist
+/static/img/ogp

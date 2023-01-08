@@ -19,6 +19,16 @@ download() {
 
 cd $srcdir
 
+#Generate OGImage
+grep '^title: "' ./content/posts/*/*/*.md |\
+  sed "s/:title: /\n/g" |\
+  sed "s/\/index.md//g" |\
+  sed -E "s/^.\/content\/posts\/([0-9]{8})\//\1-/g" |\
+  sed 's/"//g' > postlist
+
+mkdir -p ./static/img/ogp
+cat postlist | xargs -n2 -d"\n" -P8 bash -c './genogimg.sh "$1" ./static/img/ogp.png "./static/img/ogp/$0.jpg"'
+
 hugo --gc --minify
 
 if [ ! -e ${srcdir}/pagefind_extended ]; then
