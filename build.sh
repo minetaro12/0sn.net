@@ -1,8 +1,8 @@
 #!/bin/bash
 
 srcdir=$(cd $(dirname $0); pwd)
-pagefind_amd64="https://github.com/CloudCannon/pagefind/releases/download/v0.10.6/pagefind_extended-v0.10.6-x86_64-unknown-linux-musl.tar.gz"
-pagefind_aarch64="https://github.com/CloudCannon/pagefind/releases/download/v0.10.6/pagefind_extended-v0.10.6-aarch64-unknown-linux-musl.tar.gz"
+pagefind_amd64="https://github.com/CloudCannon/pagefind/releases/download/v0.10.7/pagefind_extended-v0.10.7-x86_64-unknown-linux-musl.tar.gz"
+pagefind_aarch64="https://github.com/CloudCannon/pagefind/releases/download/v0.10.7/pagefind_extended-v0.10.7-aarch64-unknown-linux-musl.tar.gz"
 
 download() {
   if [ $(uname -m) = "x86_64" ]; then
