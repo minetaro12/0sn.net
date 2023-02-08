@@ -37,3 +37,10 @@ $ gpg --fetch-keys https://github.com/minetaro12.gpg
 or
 $ gpg --fetch-keys https://keybase.io/minetaro12/pgp_keys.asc
 ```
+
+---
+
+## Nostr Public Key
+```
+npub10san7je9zqdc08rvg8ffyy6dp8hc2xg42u5spl3luth97q9k0lfqddekc3
+```
