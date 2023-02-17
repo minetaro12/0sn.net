@@ -19,19 +19,19 @@ download() {
 
 cd $srcdir
 
-if !(type convert&>/dev/null); then
-  echo "Please install ImageMagick"
-  exit 1
-fi
+# if !(type convert&>/dev/null); then
+#   echo "Please install ImageMagick"
+#   exit 1
+# fi
 
-#Generate OGImage
-mkdir -p ./static/img/ogp
-grep '^title: "' ./content/posts/*/*/*.md |\
-  sed "s/:title: /\n/g" |\
-  sed "s/\/index.md//g" |\
-  sed -E "s/^.\/content\/posts\/([0-9]{8})\//\1-/g" |\
-  sed 's/"//g' |\
-  xargs -n2 -d"\n" -P8 bash -c './genogimg.sh "$1" ./static/img/ogp.png "./static/img/ogp/$0.jpg"'
+# #Generate OGImage
+# mkdir -p ./static/img/ogp
+# grep '^title: "' ./content/posts/*/*/*.md |\
+#   sed "s/:title: /\n/g" |\
+#   sed "s/\/index.md//g" |\
+#   sed -E "s/^.\/content\/posts\/([0-9]{8})\//\1-/g" |\
+#   sed 's/"//g' |\
+#   xargs -n2 -d"\n" -P8 bash -c './genogimg.sh "$1" ./static/img/ogp.png "./static/img/ogp/$0.jpg"'
 
 hugo --gc --minify
 
