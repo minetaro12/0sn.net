@@ -1,7 +1,7 @@
 ---
 title: "ThinkPad トラックポイント・キーボード 0B47208を買ってみた"
 date: 2022-12-19T15:47:55+09:00
-tags: ["thinkapd","keyboard"]
+tags: ["thinkpad","keyboard"]
 comments: true
 showToc: false
 ---
