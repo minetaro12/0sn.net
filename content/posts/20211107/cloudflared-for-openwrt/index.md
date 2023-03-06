@@ -10,49 +10,15 @@ showToc: true
 
 ## ビルド方法
 
-1\. OpenWrtのSDKをダウンロードして解凍
-
-[ここ](https://downloads.openwrt.org/)からターゲットのSDKをダウンロードして解凍する  
-自分はGL-MT300N-V2で動かしたいので[これ](https://archive.openwrt.org/releases/21.02.0/targets/ramips/mt76x8/openwrt-sdk-21.02.0-ramips-mt76x8_gcc-8.4.0_musl.Linux-x86_64.tar.xz)をダウンロードした
-
-2\. リポジトリをクローン
-
-`packages`内に[これ](https://github.com/minetaro12/openwrt-cloudflared)を`git clone`
-
-3\. ビルドの準備
-
-次のコマンドを実行してパッケージをインストールする
-
-```bash
-./scripts/feeds update -a
-./scripts/feeds install -a
-```
-
-`make menuconfig`を実行して`Extra packages`内の`openwrt-cloudflared`にスペースで*を入れる
-
-4\. ビルド
-
-次のコマンドでビルドする
-
-`make ./package/openwrt-cloudflared/compile`
-
-終わると`bin`内にパッケージができる
-
-## バイナリだけ欲しい場合(推奨)
-
 [これ](https://github.com/cloudflare/cloudflared)をクローン  
-`GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -trimpath -ldflags "-s -w" ./cmd/cloudflared`でビルド  
+`GOOS=linux GOARCH=mipsle make cloudflared`  
 アーキテクチャは必要に応じて変更してください
 
 ## 動かす
 
-バイナリが20MBくらいあるので、exrootで拡張するかパッケージを解凍してtmp等別の場所に入れてうごかすことをおすすめします。  
-~~自分は`/etc/init.d/cloudflared`を作成して、起動時にバイナリをGithubからダウンロードするようにしました~~
+バイナリが20MBくらいあるのでexrootで拡張するか、別のデバイスに置く必要があります。
 
-※2022/02/09追記  
-起動時にダウンロードだと動かない場合があるので、`/etc/init.d/cloudflared`を作成しUSBメモリから読み込むようにしました。(tmuxが必要です)  
-デーモン化する場合は`/root/.cloudflared`の中身を`/etc/cloudflared`にコピーする必要があります。
-
+デーモン化する場合は、`/etc/init.d/cloudflared`に以下のようなファイルを作成します。
 ```bash
 !/bin/sh /etc/rc.common
 
@@ -61,12 +27,14 @@ STOP=15
 
 start() {
         # commands to launch application
-        tmux new-session -s cfd-ssh -d "/mnt/sda1/bin/cloudflared tunnel --hostname ssh.example.com --url ssh://localhost:22 --no-autoupdate"
+        export TUNNEL_PIDFILE=/tmp/cloudflared.pid
+        /mnt/sda1/bin/cloudflared tunnel run --token hogehoge
 }
 
 stop() {
         # commands to kill application
-        tmux send-keys -t cfd-ssh C-c
+        kill $(cat /tmp/cloudflared.pid)
         sleep 5
 }
 ```
+`/etc/init.d/cloudflared enable`で有効になります。
