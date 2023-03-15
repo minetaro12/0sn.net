@@ -2,4 +2,4 @@
 
 ## ビルド方法
 
-`bash ./scripts/build.sh`
+`bash ./build.sh`
