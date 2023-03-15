@@ -40,3 +40,20 @@ if [ ! -e ${srcdir}/pagefind_extended ]; then
 fi
 
 ./pagefind_extended --source public
+
+# Purge Cache
+json=$(cat << EOS
+{
+  "files": [
+    "https://0sn.net/js/script.min.js",
+    "https://0sn.net/css/style.min.css"
+  ]
+}
+EOS
+)
+
+curl https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache \
+  -X POST \
+  --header "Authorization: Bearer ${CF_API_KEY}" \
+  --header "Content-Type: application/json" \
+  --data "${json}"
