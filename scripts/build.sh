@@ -6,18 +6,14 @@ pagefind_aarch64="https://github.com/CloudCannon/pagefind/releases/download/v0.1
 
 download() {
   if [ $(uname -m) = "x86_64" ]; then
-    curl $pagefind_amd64 -LO
+    curl ${pagefind_amd64} -L | tar xzvf -
   elif [ $(uname -m) = "aarch64" ]; then
-    curl $pagefind_aarch64 -LO
+    curl ${pagefind_aarch64} -L | tar xzvf -
   else
     echo "This architecture is not supported"
     exit 1
   fi
-  tar xf pagefind_extended-*.tar.gz
-  rm pagefind_extended-*.tar.gz
 }
-
-cd $srcdir
 
 # if !(type convert&>/dev/null); then
 #   echo "Please install ImageMagick"
@@ -33,9 +29,11 @@ cd $srcdir
 #   sed 's/"//g' |\
 #   xargs -n2 -d"\n" -P8 bash -c './genogimg.sh "$1" ./static/img/ogp.png "./static/img/ogp/$0.jpg"'
 
+cd ${srcdir}/../
+
 hugo --gc --minify
 
-if [ ! -e ${srcdir}/pagefind_extended ]; then
+if [ ! -e ./pagefind_extended ]; then
   download
 fi
 
