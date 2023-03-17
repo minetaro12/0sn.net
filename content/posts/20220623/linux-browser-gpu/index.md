@@ -14,6 +14,15 @@ ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)で確認しました。
 
 起動時に`--enable-features=VaapiVideoDecoder --use-gl=egl --disable-features=UseChromeOSDirectVideoDecoder`フラグを付け加えます。
 
+{{<details "Arch Linuxでのフラグの設定">}}
+`~/.config/chrome-flags.conf`もしくは`~/.config/chromium-flags.conf`に以下の内容を記述する
+```
+--enable-features=VaapiVideoDecoder
+--use-gl=egl
+--disable-features=UseChromeOSDirectVideoDecoder
+```
+{{</details>}}
+
 ## Firefoxの場合
 
 ~~**サンドボックスを無効にする必要があるので非推奨です**~~
