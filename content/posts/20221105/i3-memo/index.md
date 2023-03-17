@@ -121,3 +121,7 @@ gaps inner 5
 Exec=alacritty -e vim %F
 Terminal=false
 ```
+
+### VirtualBoxのフルスクリーンモードが機能しない
+
+VM設定→ユーザーインターフェース→フルスクリーン/シームレスモード時に表示のチェックを外す
