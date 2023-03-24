@@ -2,7 +2,7 @@
 title: "WindowsをVHDにインストールする"
 date: 2023-03-24T17:52:40+09:00
 tags: ["windows","vhd"]
-comments: false
+comments: true
 showToc: true
 ---
 WindowsをVHDにインストールしてLinuxディストリと共存させたのでメモ。
