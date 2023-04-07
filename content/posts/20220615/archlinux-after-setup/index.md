@@ -100,9 +100,9 @@ $ sudo systemctl enable sddm
 $ sudo pacman -S fcitx5-im fcitx5-mozc
 ```
 
-`/etc/environment`に以下の記述をします。
+`~/.config/environment.d/fcitx5.conf`に以下の記述をします。
 
-```/etc/environment
+```~/.config/environment.d/fcitx5.conf
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
