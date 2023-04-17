@@ -94,6 +94,12 @@ $ sudo pacman -S plasma konsole sddm
 $ sudo systemctl enable sddm
 ```
 
+最小限のインストールはこちら
+```
+$ sudo pacman -S breeze-gtk plasma-desktop kdeplasma-addons kscreen kde-gtk-config konsole sddm
+$ sudo systemctl enable sddm
+```
+
 ## 7. fcitx5のインストール
 
 ```
