@@ -30,9 +30,6 @@ Dockerをインストール
 `sudo gpasswd -a ubuntu docker`  
 ※ユーザー名は環境により書き換える
 
-ソケットファイルの権限を変える  
-`sudo chmod 666 /var/run/docker.sock`
-
 一般ユーザーで実行できることを確認  
 `docker ps`
 
