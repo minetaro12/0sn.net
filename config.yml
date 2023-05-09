@@ -3,6 +3,7 @@ languageCode: ja-jp
 title: minetaro12
 theme: hugo-osan-theme
 copyright: "&copy; 2021-2023 minetaro12"
+paginate: 10
 
 menu:
   header:
