@@ -106,12 +106,12 @@ $ sudo systemctl enable sddm
 $ sudo pacman -S fcitx5-im fcitx5-mozc
 ```
 
-`~/.config/environment.d/fcitx5.conf`に以下の記述をします。
+`~/.xprofile`に以下の記述をします。
 
-```~/.config/environment.d/fcitx5.conf
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
+```~/.xprofile
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 ```
 
 ## 8. ロケールの設定
