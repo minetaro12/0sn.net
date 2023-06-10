@@ -34,7 +34,7 @@ sudoが入っていない場合はインストール
 # pacman -S sudo
 ```
 
-`EDITOR=vim visudo`で`# %wheel ALL=(ALL) AL`をコメントを解除してください。  
+`EDITOR=vim visudo`で`# %wheel ALL=(ALL) ALL`をコメントを解除してください。  
 ユーザーをwheelグループに追加します。
 
 ```
@@ -52,7 +52,7 @@ $ sudo pacman -S xorg-server
 ## 4. ビデオドライバのインストール
 
 ### Intelの場合
-
+**第4世代以上のハードウェアではインストール不要です**([出典](https://wiki.archlinux.jp/index.php/Intel_graphics#インストール))
 ```
 $ sudo pacman -S xf86-video-intel
 ```

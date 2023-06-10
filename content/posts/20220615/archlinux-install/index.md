@@ -170,7 +170,7 @@ Arch Linuxをインストールするパーティションを`/dev/sdaB`とし�
 # echo hostname > /etc/hostname
 ```
 
-`/etc/hosts`にも記述します。
+`/etc/hosts`に以下の記述をします。
 
 ```
 127.0.0.1 localhost
