@@ -20,7 +20,7 @@ Oさんです
 - xda: [minetaro12](https://forum.xda-developers.com/m/minetaro12.11216215/)
 - AndroidFileHost: [1osan_x](https://androidfilehost.com/?w=profile&uid=17248734326145681057)
 - Keybase: [minetaro12](https://keybase.io/minetaro12)
-- Discord: [Oさん#2781](https://discord.com/users/398120671168954381)
+- Discord: [minetaro12(Oさん)](https://discord.com/users/398120671168954381)
 
 ---
 
