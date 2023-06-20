@@ -41,7 +41,7 @@ sudoが入っていない場合はインストール
 # usermod -aG wheel user
 ```
 
-`reboot`で再起動し新しく作成したユーザーでログインします。
+`exit`でログアウトし、新しく作成したユーザーでログインします。
 
 ## 3. Xorgのインストール
 
@@ -94,9 +94,9 @@ $ sudo pacman -S plasma konsole sddm
 $ sudo systemctl enable sddm
 ```
 
-最小限のインストールはこちら
+最小限のインストールの場合
 ```
-$ sudo pacman -S breeze-gtk plasma-desktop kdeplasma-addons kscreen kde-gtk-config konsole sddm
+$ sudo pacman -S breeze-gtk plasma-desktop kdeplasma-addons kscreen kde-gtk-config konsole kinfocenter sddm
 $ sudo systemctl enable sddm
 ```
 
@@ -137,6 +137,8 @@ $ sudo pacman -S networkmanager
 $ sudo systemctl disable dhcpcd
 $ sudo systemctl enable NetworkManager
 ```
+
+`Xfce4`の場合は`network-manager-applet`、`KDE`の場合は`plasma-nm`もインストールします。
 
 ## 10. 再起動
 
