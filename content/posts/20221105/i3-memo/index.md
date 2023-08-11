@@ -9,7 +9,7 @@ Arch Linuxへのi3wmの導入で色々とハマった箇所があったのでメ
 
 ## インストール
 
-`yay -S i3`でi3のパッケージグループをインストールする。(~~`yay -S i3-gaps`~~`yay -S i3-wm`でもOK)  
+`paru -S i3`でi3のパッケージグループをインストールする。(~~`paru -S i3-gaps`~~`paru -S i3-wm`でもOK)  
 `lightdm`等を使って起動する。
 
 ※追記  
@@ -26,14 +26,14 @@ https://github.com/minetaro12/dotfiles
 
 ### 通知を表示させる
 
-`yay -S xfce4-notifyd`で`xfce4-notifyd`をインストール。  
+`paru -S xfce4-notifyd`で`xfce4-notifyd`をインストール。  
 以下の設定で起動する。
 
 - `exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd`
 
 ### polkitのパスワード入力画面が表示されない
 
-`yay -S polkit-gnome`で`polkit-gnome`をインストール。  
+`paru -S polkit-gnome`で`polkit-gnome`をインストール。  
 以下の設定で起動する。
 
 - `exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`

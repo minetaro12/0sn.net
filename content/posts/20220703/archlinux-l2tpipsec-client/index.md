@@ -18,7 +18,7 @@ Arch LinuxでL2TP/IPSecのVPNに接続するのにかなりハマったのでメ
 strongswanではうまくいかないようなので、networkmanager-l2tpとlibreswanをインストールする。  
 libreswanはAURにあります。
 
-`yay -S networkmanager-l2tp libreswan`
+`paru -S networkmanager-l2tp libreswan`
 
 ## ipsecデーモンを起動するときのエラー
 

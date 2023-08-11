@@ -8,7 +8,7 @@ showToc: true
 ## 1. virt-managerと必要なパッケージをインストール
 
 ```
-$ yay -S virt-manager qemu dnsmasq
+$ paru -S virt-manager qemu dnsmasq
 ```
 
 ## 2. 一般ユーザーでも使えるようにする
