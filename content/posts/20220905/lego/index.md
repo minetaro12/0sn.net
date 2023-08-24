@@ -27,7 +27,7 @@ webrootモードでやることも可能です。
 #!/bin/bash
 
 CF_DNS_API_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
-  lego --path "/usr/local/etc/lego/data" \
+  lego --path "/etc/lego" \
   --email "example@example.com" \
   --domains "example.com" \
   --domains "*.example.com" \
@@ -48,7 +48,7 @@ EAB_KEY=$(echo "$JSON" | jq -r .eab_kid)
 EAB_HMAC_KEY=$(echo "$JSON" | jq -r .eab_hmac_key)
 
 CF_DNS_API_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
-  lego --path "/usr/local/etc/lego/data" \
+  lego --path "/etc/lego" \
   --email "example@example.com" \
   --domains "example.com" \
   --domains "*.example.com" \
@@ -59,13 +59,13 @@ CF_DNS_API_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
 ```
 
 シェルスクリプトを実行すると取得ができます。  
-このシェルスクリプトでは`/usr/local/etc/lego/data`に証明書やアカウント情報が保存されます。  
+このシェルスクリプトでは`/etc/lego`に証明書やアカウント情報が保存されます。  
 アクセストークン等が含まれているのでパーミッションに注意して保存します。
 
 ## 証明書のリストを表示
 
 ```
-$ lego --path /usr/local/etc/lego/data list
+$ lego --path /etc/lego list
 ```
 
 ## 証明書の更新
