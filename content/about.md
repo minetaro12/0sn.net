@@ -5,15 +5,17 @@ draft: false
 comments: false
 showToc: false
 ---
-
 Oさんです
 
 ![saber](/img/saber.png)
 
 ---
+## このサイトについて
+このサイトは[Hugo](https://gohugo.io/)を使って構築し、[Cloudflare Pages](https://pages.cloudflare.com/)でホスティングしています  
+ソースは[こちら](https://github.com/minetaro12/0sn.net)
 
+---
 ## リンク集
-
 - Twitter: [@1osan_x](https://twitter.com/1osan_x)
 - Misskey: [@osan@msk.minetaro12.com](https://msk.minetaro12.com/@osan)
 - GitHub: [@minetaro12](https://github.com/minetaro12)
@@ -24,9 +26,7 @@ Oさんです
 - Discord: [minetaro12(Oさん)](https://discord.com/users/398120671168954381)
 
 ---
-
 ## PGP Public Key
-
 Fingerprint
 ```
 0878 3CD7 C6F5 3940 6712  BD4B 6240 7CA4 5925 BE7A
@@ -40,7 +40,6 @@ $ gpg --fetch-keys https://keybase.io/minetaro12/pgp_keys.asc
 ```
 
 ---
-
 ## Nostr Public Key
 ```
 npub10san7je9zqdc08rvg8ffyy6dp8hc2xg42u5spl3luth97q9k0lfqddekc3
