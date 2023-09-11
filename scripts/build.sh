@@ -31,17 +31,19 @@ download() {
 #   xargs -n2 -d"\n" -P8 bash -c './genogimg.sh "$1" ./static/img/ogp.png "./static/img/ogp/$0.jpg"'
 
 cd ${srcdir}/../
-
+# ビルド
 hugo --gc --minify
 
+# pagefind
 if [ ! -e ./pagefind_extended ]; then
   download
 fi
-
 ./pagefind_extended --source public
 
 # Purge Cache
-json=$(cat << EOS
+# PURGE_CACHEがtrueの場合は実行、falseの場合は実行しない
+if [ "${PURGE_CACHE}" = "true" ]; then
+  json=$(cat << EOS
 {
   "files": [
     "https://0sn.net/js/script.min.js",
@@ -49,10 +51,13 @@ json=$(cat << EOS
   ]
 }
 EOS
-)
+  )
 
-curl https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache \
-  -X POST \
-  --header "Authorization: Bearer ${CF_API_KEY}" \
-  --header "Content-Type: application/json" \
-  --data "${json}"
+  curl https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache \
+    -X POST \
+    --header "Authorization: Bearer ${CF_API_KEY}" \
+    --header "Content-Type: application/json" \
+    --data "${json}"
+else
+  echo "Skip purge cache"
+fi
