@@ -19,12 +19,16 @@ menu:
       weight: 3
       url: /tags
 
-    - name: Search
+    - name: Links
       weight: 4
+      url: /links
+
+    - name: Search
+      weight: 5
       url: /search
 
     - name: My GitHub
-      weight: 5
+      weight: 6
       url: https://github.com/minetaro12
       params:
         newtab: true
