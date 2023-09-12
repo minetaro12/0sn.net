@@ -39,7 +39,7 @@ params:
   description: Oさんのページ
   favicon: favicon.ico
   image: img/defogp.png
-  postnav: false
+  postnav: true
 
 markup:
   highlight:
