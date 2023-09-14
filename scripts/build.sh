@@ -1,7 +1,7 @@
 #!/bin/bash
 
 srcdir=$(cd $(dirname $0); pwd)
-pagefind_ver="v0.12.0"
+pagefind_ver="v1.0.1"
 pagefind_amd64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-x86_64-unknown-linux-musl.tar.gz"
 pagefind_aarch64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-aarch64-unknown-linux-musl.tar.gz"
 
@@ -38,7 +38,7 @@ hugo --gc --minify
 if [ ! -e ./pagefind_extended ]; then
   download
 fi
-./pagefind_extended --source public
+./pagefind_extended --site public
 
 # Purge Cache
 # PURGE_CACHEがtrueの場合は実行、falseの場合は実行しない
