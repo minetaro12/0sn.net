@@ -31,7 +31,7 @@ $ sudo su
 
 ## 3. 設定
 
-ポートフォワードを有効にする必要がある
+IPフォワードを有効にする必要がある
 
 ```
 # echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
@@ -62,6 +62,7 @@ PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING 
 PublicKey = #wgclient.pubの内容
 AllowedIPs = 192.168.10.2/32 #クライアントに割り当てるIPアドレス
 ```
+同様に`chmod 600 wg0.conf`で権限を変える
 
 ---
 
@@ -96,13 +97,14 @@ $ sudo systemctl start wg-quick@wg0
 ```
 [Interface]
 PrivateKey = #wgclient.keyの内容
-Address = 192.168.10.2/32 #サーバー側で割り当てたクライアント用IPアドレス
+Address = 192.168.10.2/24 #サーバー側で割り当てたクライアント用IPアドレス
 #DNS = 1.1.1.1
 
 [Peer]
 PublicKey = #wgserver.pubの内容
-AllowedIPs = 192.168.0.0/24, 192.168.10.0/24 #WireGuardを経由するIPアドレス,範囲
+AllowedIPs = 192.168.0.0/24, 192.168.10.0/24 #WireGuardを経由するアドレス範囲
 EndPoint = #サーバーのIPアドレス:ポート
+#PersistentKeepAlive = 25 #NAT背後の場合は設定
 ```
 
 PeerのAllowedIPsで`0.0.0.0/0`を指定するとすべての通信がWireGuard経由になる  
