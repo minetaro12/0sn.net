@@ -1,7 +1,7 @@
 #!/bin/bash
 
 srcdir=$(cd $(dirname $0); pwd)
-pagefind_ver="v1.0.2"
+pagefind_ver="v1.0.3"
 pagefind_amd64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-x86_64-unknown-linux-musl.tar.gz"
 pagefind_aarch64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-aarch64-unknown-linux-musl.tar.gz"
 
