@@ -2,22 +2,29 @@
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:image" content="https://ogimage.0sn.net/?title={{ .Title }}&site=0sn.net{{ if .Params.tags }}&tags={{ delimit .Params.tags "," }}{{ end }}">
+
+{{ $tags := "" }}
+{{ if .Params.tags }}
+{{ $tags = (delimit .Params.tags ",") }}
+{{ end }}
+{{ $imgurl := printf "https://ogimage.0sn.net/?title=%s&site=0sn.net&tags=%s" .Title $tags }}
+
+<meta property="og:image" content="{{ $imgurl }}">
 
 {{- if .Description }}
-  <meta property="og:description" content="{{ .Description }}" />
-  <meta name="description" content="{{ .Description }}">
+<meta property="og:description" content="{{ .Description }}" />
+<meta name="description" content="{{ .Description }}">
 {{- else if .Site.Params.description }}
-  <meta property="og:description" content="{{ .Site.Params.description }}" />
-  <meta name="description" content="{{ .Site.Params.description }}">
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta name="description" content="{{ .Site.Params.description }}">
 {{- end }}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://ogimage.0sn.net/?title={{ .Title }}&site=0sn.net{{ if .Params.tags }}&tags={{ delimit .Params.tags "," }}{{ end }}">
+<meta property="twitter:image" content="{{ $imgurl }}">
 <meta name="twitter:title" content="{{ .Title }}">
 {{- if .Description }}
-  <meta name="twitter:description" content="{{ .Description }}" />
+<meta name="twitter:description" content="{{ .Description }}" />
 {{- else if .Site.Params.description }}
-  <meta name="twitter:description" content="{{ .Site.Params.description }}" />
+<meta name="twitter:description" content="{{ .Site.Params.description }}" />
 {{- end }}
