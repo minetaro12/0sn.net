@@ -46,7 +46,7 @@ if [ "${PURGE_CACHE}" = "true" ]; then
   json=$(cat << EOS
 {
   "files": [
-    "https://0sn.net/js/script.min.js",
+    "https://0sn.net/js/bundle.umd.js",
     "https://0sn.net/css/style.min.css"
   ]
 }
