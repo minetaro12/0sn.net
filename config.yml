@@ -9,23 +9,25 @@ menu:
   header:
     - name: About
       weight: 1
-      url: /about
+      url: /about/
 
     - name: Archives
       weight: 2
-      url: /archives
+      url: /archives/
 
     - name: Tags
       weight: 3
-      url: /tags
+      url: /tags/
 
     - name: Links
       weight: 4
-      url: /links
+      url: /links/
 
     - name: Search
       weight: 5
-      url: /search
+      url: /search/
+      params:
+        swup: false
 
     - name: My GitHub
       weight: 6
