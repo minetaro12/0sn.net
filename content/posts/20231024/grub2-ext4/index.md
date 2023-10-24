@@ -6,8 +6,8 @@ comments: true
 showToc: false
 ---
 Arch Linuxで`mkfs.ext4`したパーティションが別のOSでインストールしたGRUB2や[Ventoy](https://github.com/ventoy/Ventoy)で認識されない場合がある  
-`tune2fs -l <デバイス名>`の`Filesystem features`で`metadata_csum_seed`が有効になっていれば、下のコマンドで無効化する
+`tune2fs -l /dev/sdX1`の`Filesystem features`で`metadata_csum_seed`が有効になっていれば、下のコマンドで無効化する
 
 ```
-# tune2fs -O ^metadata_csum_seed <デバイス名>
+# tune2fs -O ^metadata_csum_seed /dev/sdX1
 ```
