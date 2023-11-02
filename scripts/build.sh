@@ -1,20 +1,20 @@
 #!/bin/bash
 
 srcdir=$(cd $(dirname $0); pwd)
-pagefind_ver="v1.0.3"
-pagefind_amd64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-x86_64-unknown-linux-musl.tar.gz"
-pagefind_aarch64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-aarch64-unknown-linux-musl.tar.gz"
+# pagefind_ver="v1.0.3"
+# pagefind_amd64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-x86_64-unknown-linux-musl.tar.gz"
+# pagefind_aarch64="https://github.com/CloudCannon/pagefind/releases/download/${pagefind_ver}/pagefind_extended-${pagefind_ver}-aarch64-unknown-linux-musl.tar.gz"
 
-download() {
-  if [ $(uname -m) = "x86_64" ]; then
-    curl ${pagefind_amd64} -L | tar xzvf -
-  elif [ $(uname -m) = "aarch64" ]; then
-    curl ${pagefind_aarch64} -L | tar xzvf -
-  else
-    echo "This architecture is not supported"
-    exit 1
-  fi
-}
+# download() {
+#   if [ $(uname -m) = "x86_64" ]; then
+#     curl ${pagefind_amd64} -L | tar xzvf -
+#   elif [ $(uname -m) = "aarch64" ]; then
+#     curl ${pagefind_aarch64} -L | tar xzvf -
+#   else
+#     echo "This architecture is not supported"
+#     exit 1
+#   fi
+# }
 
 # if !(type convert&>/dev/null); then
 #   echo "Please install ImageMagick"
@@ -35,10 +35,10 @@ cd ${srcdir}/../
 hugo --gc --minify
 
 # pagefind
-if [ ! -e ./pagefind_extended ]; then
-  download
-fi
-./pagefind_extended --site public
+# if [ ! -e ./pagefind_extended ]; then
+#   download
+# fi
+# ./pagefind_extended --site public
 
 # Purge Cache
 # PURGE_CACHEがtrueの場合は実行、falseの場合は実行しない

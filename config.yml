@@ -26,8 +26,6 @@ menu:
     - name: Search
       weight: 5
       url: /search/
-      params:
-        swup: false
 
     - name: My GitHub
       weight: 6
@@ -47,3 +45,6 @@ markup:
   highlight:
     guessSyntax: true
     style: monokai #see https://xyproto.github.io/splash/docs/all.html
+
+outputs:
+  home: [html, rss, json]
