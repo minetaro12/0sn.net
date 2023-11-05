@@ -17,10 +17,9 @@ Oさんです
 ---
 ## リンク集
 - Twitter: [@1osan_x](https://twitter.com/1osan_x)
-- Misskey: [@osan@msk.minetaro12.com](https://msk.minetaro12.com/@osan)
 - GitHub: [@minetaro12](https://github.com/minetaro12)
 - GitLab: [@minetaro12](https://gitlab.com/minetaro12)
-- xda: [minetaro12](https://forum.xda-developers.com/m/minetaro12.11216215/)
+- xda: [minetaro12](https://xdaforums.com/m/minetaro12.11216215/)
 - AndroidFileHost: [1osan_x](https://androidfilehost.com/?w=profile&uid=17248734326145681057)
 - Keybase: [minetaro12](https://keybase.io/minetaro12)
 - Discord: [minetaro12(Oさん)](https://discord.com/users/398120671168954381)
