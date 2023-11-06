@@ -68,7 +68,7 @@ netboot.xyz.efiを選択すると次のような画面になります。
 
 ## 4. OSをインストールする
 
-### {{<rawhtml>}}<span style="color: red; ">※OSの再インストールを行うとディスク上のすべてのデータが削除されます。</span>{{</rawhtml>}}
+**{{<rawhtml>}}<span style="color: red; ">※OSの再インストールを行うとディスク上のすべてのデータが削除されます。</span>{{</rawhtml>}}**
 
 Linux Network Installs→Debian→インストールしたいバージョンを選択→Text Based Installに進みます。  
 しばらくするとDebianのテキストベースインストーラが起動するので、画面に従ってインストールします。
