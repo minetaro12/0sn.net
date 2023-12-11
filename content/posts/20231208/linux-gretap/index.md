@@ -72,8 +72,10 @@ host1:~# ip neigh
 ARPテーブルに表示されているのでL2レベルで接続できていることがわかる。
 
 ## NICをブリッジしたときに通信できない場合
-ブリッジを介したNIC間の通信ができない場合は以下のコマンドで`net.bridge.bridge-nf-call-iptables`を無効化する。
+ブリッジを介したNIC間の通信ができない場合はiptablesの操作で通信を許可する。
 ```bash
-~# sysctl net.bridge.bridge-nf-call-iptables=0
-~# echo "net.bridge.bridge-nf-call-iptables = 0" > /etc/sysctl.d/99-sysctl.conf
+~# iptables -I FORWARD -m physdev --physdev-is-bridged -j ACCEPT
 ```
+
+## 参考
+- https://qiita.com/mochizuki875/items/c69bb7fb2ef3a73dc1a9
