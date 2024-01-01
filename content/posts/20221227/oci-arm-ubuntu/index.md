@@ -5,7 +5,10 @@ tags: ["oraclecloud","linux", "ubuntu"]
 comments: true
 showToc: true
 ---
-OCIのARMインスタンスのUbuntuをVMごと削除せずにやる方法を考えたけどうまくいかなかった
+~~OCIのARMインスタンスのUbuntuをVMごと削除せずにやる方法を考えたけどうまくいかなかった~~
+
+**※2024/1/1追記**  
+[netboot.xyzを使った方法](/posts/20220105/oci-reinstall/)でUbuntuのインストールができるようになっていました。
 
 ## 1. ISOファイルのダウンロード
 今回は[ここ](https://cdimage.ubuntu.com/releases/jammy/release/)から`64-bit ARM (ARMv8/AArch64) server install image`をダウンロードします。  

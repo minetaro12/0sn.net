@@ -9,12 +9,15 @@ OCIにはOSの再インストール機能等がないので、再インストー
 
 netboot.xyzを使うと再作成しなくてもOSを再インストールできるようなので試しました。
 
+**※2024/1/1追記**  
+今まではUbuntuのインストーラが起動できませんでしたが起動できるようになっていました。
+
 ***
 
 ## 環境
 
 OracleCloudのARM64で確認しました。  
-再インストールOSはdebianのみ確認しました。
+再インストールOSはUbuntuとDebianを確認しました。
 
 ## 1. SSHでログイン
 
@@ -33,14 +36,14 @@ wget https://boot.netboot.xyz/ipxe/netboot.xyz-arm64.efi
 /boot/efiにコピーします
 
 ```bash
-sudo cp <.efi file> /boot/efi
+sudo cp netboot.xyz-arm64.efi /boot/efi
 ```
 
 こうなればOKです
 
 ```
 $ sudo ls /boot/efi
-EFI  netboot.xyz.efi
+EFI  netboot.xyz-arm64.efi
 ```
 
 SSH接続はまだ切らないでください。
@@ -60,9 +63,9 @@ SSH接続はまだ切らないでください。
 
 ![ocibootmenu](oci-bootmenu.jpg)
 
-上下キーとエンターで、Boot Maintenance Manager→Boot From File→UEFI~→netboot.xyz.efiに進みます。
+上下キーとエンターで、Boot Maintenance Manager→Boot From File→UEFI~→netboot.xyz-arm64.efiに進みます。
 
-netboot.xyz.efiを選択すると次のような画面になります。
+netboot.xyz-arm64.efiを選択すると次のような画面になります。
 
 ![netboot](oci-netboot.jpg)
 
@@ -70,7 +73,7 @@ netboot.xyz.efiを選択すると次のような画面になります。
 
 **{{<rawhtml>}}<span style="color: red; ">※OSの再インストールを行うとディスク上のすべてのデータが削除されます。</span>{{</rawhtml>}}**
 
-Linux Network Installs→Debian→インストールしたいバージョンを選択→Text Based Installに進みます。  
-しばらくするとDebianのテキストベースインストーラが起動するので、画面に従ってインストールします。
+Linux Network InstallsからインストールしたいOSを選択します。   
+しばらくするとインストーラが起動するので、画面に従ってインストールします。
 
-AMD64インスタンスでは何故かインストーラが起動しませんでした。
+AMD64インスタンスでは何故かUbuntuやDebianのインストーラが起動しませんでした。
