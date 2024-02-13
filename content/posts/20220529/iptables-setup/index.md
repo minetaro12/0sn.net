@@ -50,6 +50,4 @@ COMMIT
 
 ## 3. 反映させる
 
-`sudo systemctl restart netfilter-persistent`
-
-書き方を間違えているとエラーになるので確認する
+`sudo bash -c "iptables-restore < /etc/iptables/rules.v4"`

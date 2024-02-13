@@ -47,7 +47,7 @@ VPNのインターフェースは`192.168.10.1/24`
 50000番で待ち受け  
 クライアントは`192.168.10.2`とする
 
-PostUp PostDownはNATの設定なのでインターフェース名は適宜変更する  
+PostUp,PostDownのNATのインターフェース名は適宜変更する   
 クライアントを追加する場合は、Peerを追加する
 
 ```
@@ -55,8 +55,10 @@ PostUp PostDownはNATの設定なのでインターフェース名は適宜変�
 Address = 192.168.10.1/24 #VPNインターフェースで使うIPアドレス
 PrivateKey = #wgserver.keyの内容
 ListenPort = 50000
-PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+PostUp = iptables -A FORWARD -i %i -j ACCEPT
+PostUp = iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT
+PostDown = iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
 [Peer]
 PublicKey = #wgclient.pubの内容
@@ -72,14 +74,11 @@ AllowedIPs = 192.168.10.2/32 #クライアントに割り当てるIPアドレス
 -A INPUT -p udp --dport 50000 -j ACCEPT
 ```
 
-WireGuard経由でインターネットに出たり、クライアント同士で通信するには以下の設定が必要
-
-インターフェース名は適宜変更してください
-
+PostUp,PostDownの部分は環境によって適宜変更する  
+以下はufwの場合の例
 ```
--A FORWARD -i wg0 -o eth0 -j ACCEPT
--A FORWARD -i eth0 -o wg0 -j ACCEPT
--A FORWARD -i wg0 -o wg0 -j ACCEPT
+PostUp = ufw route allow in on %i
+PostDown = ufw route delete allow in on %i
 ```
 
 ## 4. 起動
