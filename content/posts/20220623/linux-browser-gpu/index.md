@@ -5,8 +5,8 @@ tags: ["linux", "chrome", "chromium", "firefox"]
 comments: true
 showToc: true
 ---
-ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)と、Arch Linuxを導入したIntel N95のミニPCで確認しました。  
-デスクトップ環境はXorgです。
+ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)と、ミニPC(Intel N95/Arch Linux)で確認しました。  
+デスクトップ環境はPlasma 6、Waylandです。
 
 ## ドライバのインストール
 
@@ -15,16 +15,13 @@ ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)と、Arch Linuxを導入したIntel 
 
 ## Chrome/Chromiumの場合
 
-**最近のバージョンではハードウェアデコードできないようなのでFirefox推奨です**
-
-起動時に`--enable-features=VaapiVideoDecoder --disable-features=UseChromeOSDirectVideoDecoder`フラグを付け加えます。  
-Intel UHDだと環境変数に`LIBVA_DRI3_DISABLE=1`に設定しないと動かない場合があるようです。
+起動時に`--enable-features=VaapiVideoDecodeLinuxGL`フラグを付け加えます。  
+AMDGPUでは動作せず、IntelGPUでのみ動作します。
 
 {{<details "Arch Linuxでのフラグの設定">}}
 `~/.config/chrome-flags.conf`もしくは`~/.config/chromium-flags.conf`に以下の内容を記述する
 ```
---enable-features=VaapiVideoDecoder
---disable-features=UseChromeOSDirectVideoDecoder
+--enable-features=VaapiVideoDecodeLinuxGL
 ```
 {{</details>}}
 
