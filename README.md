@@ -1,4 +1,4 @@
-# new-minetaro12pages
+# 0sn.net
 
 ## ビルド方法
 
