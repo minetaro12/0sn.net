@@ -1,7 +1,7 @@
 ---
 title: "Linuxでファイル暗号化"
 date: 2024-05-21T13:52:21+09:00
-tags: ["linux","encrypt", "fscrypt"]
+tags: ["linux","encrypt", "fscrypt", "dm-crypt"]
 comments: true
 showToc: true
 ---
