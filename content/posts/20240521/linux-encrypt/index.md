@@ -157,7 +157,7 @@ vdb1     254:17   0   5G  0 part
 └─secret 253:1    0   5G  0 crypt /mnt <-暗号化されたパーティションがマウントされた
 ```
 
-## アンマウント
+### アンマウント
 ```bash
 $ sudo umount /mnt
 $ sudo cryptsetup close secret
