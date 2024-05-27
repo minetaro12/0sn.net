@@ -56,3 +56,30 @@ qemu-system-aarch64 -M virt -cpu host -enable-kvm \
 コンソールには`telnet localhost 8023`で接続することができる。
 
 {{<img src="console.webp" alt="vm console">}}
+
+## VNCを利用してコンソールにアクセスする
+`-vnc`オプションは`:0`で5900ポート、`:1`で5901ポートのようになる。  
+systemdの起動ログが流れない場合は、カーネルパラメーターに`console=tty1`を追加する。  
+画面が表示されない場合は、`virtio-gpu`を`ramfb`に変更する。
+
+```bash
+#!/bin/bash
+qemu-system-aarch64 -M virt -cpu host -enable-kvm \
+ -smp 2 -m 2G \
+ -vnc :0 \
+ -drive if=pflash,format=raw,readonly=on,file=flash0.img \
+ -drive if=pflash,format=raw,file=flash1.img \
+ -drive format=raw,file=disk.img \
+ -cdrom hogehoge.iso \
+ -device virtio-gpu \
+ -device qemu-xhci \
+ -device usb-kbd \
+ -k ja
+ ```
+
+## ポートフォワーディング
+ホストのTCP:8022を仮想マシンのTCP:22にバインドするには以下のようにオプションを設定する
+
+```
+-nic user,hostfwd=tcp::8022-:22
+```
