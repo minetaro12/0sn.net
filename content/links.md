@@ -6,9 +6,9 @@ showToc: false
 ---
 ## 相互リンク
 ### neko0xff  
-{{<img src="https://neko0xff.github.io/assets/avatar.jpg" width="100px">}}
+{{<img src="https://neko0xff-blog.vercel.app/assets/avatar.jpg" width="100px">}}
 Meow。
-- https://neko0xff.github.io/
+- https://neko0xff-blog.vercel.app/
 
 ### kageneko
 {{<img src="https://avatars.githubusercontent.com/u/146046319?v=4" width="100px">}}
