@@ -83,3 +83,15 @@ qemu-system-aarch64 -M virt -cpu host -enable-kvm \
 ```
 -nic user,hostfwd=tcp::8022-:22
 ```
+
+## NICを既存のブリッジに接続する
+事前に使うブリッジを`/etc/qemu/bridge.conf`に書いておく
+```
+allow br0
+```
+
+`-nic`オプションを以下のようにする  
+MACアドレスは省略すると固定になってしまうので、必ず指定する
+```
+-nic bridge,br=br0,mac="52:54:XX:XX:XX:XX"
+```
