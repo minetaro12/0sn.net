@@ -15,8 +15,8 @@ ThinkBook 13s Gen3(Ryzen7 5800U/Arch Linux)と、ミニPC(Intel N95/Arch Linux)�
 
 ## Chrome/Chromiumの場合
 
+### IntelGPUの手順
 起動時に`--enable-features=VaapiVideoDecodeLinuxGL`フラグを付け加えます。  
-AMDGPUでは動作せず、IntelGPUでのみ動作します。
 
 {{<details "Arch Linuxでのフラグの設定">}}
 `~/.config/chrome-flags.conf`もしくは`~/.config/chromium-flags.conf`に以下の内容を記述する
@@ -24,6 +24,10 @@ AMDGPUでは動作せず、IntelGPUでのみ動作します。
 --enable-features=VaapiVideoDecodeLinuxGL
 ```
 {{</details>}}
+
+### AMDGPUの場合
+Vulkanが必要なので`vulkan-radeon`をインストールする。  
+起動時に`--enable-features=VaapiVideoDecoder,VaapiIgnoreDriverChecks,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE`フラグを付け加える。
 
 ## Firefoxの場合
 
