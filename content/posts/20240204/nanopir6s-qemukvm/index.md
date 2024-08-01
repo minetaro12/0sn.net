@@ -74,6 +74,7 @@ qemu-system-aarch64 -M virt -cpu host -enable-kvm \
  -device virtio-gpu \
  -device qemu-xhci \
  -device usb-kbd \
+ -device usb-tablet \
  -k ja
  ```
 
