@@ -4,6 +4,7 @@ title: minetaro12
 theme: hugo-osan-theme
 copyright: "&copy; 2021-2024 minetaro12"
 paginate: 10
+enableGitInfo: true
 
 menu:
   header:
