@@ -3,7 +3,6 @@ languageCode: ja-jp
 title: minetaro12
 theme: hugo-osan-theme
 copyright: "&copy; 2021-2024 minetaro12"
-paginate: 10
 enableGitInfo: true
 
 menu:
@@ -33,6 +32,9 @@ menu:
       url: https://github.com/minetaro12
       params:
         newtab: true
+
+pagination:
+  pagerSize: 10
 
 params:
   showsource: true
