@@ -9,4 +9,5 @@ if [ -d ./public ]; then
 fi
 
 # ビルド
+git fetch --unshallow
 hugo --gc --minify
