@@ -110,12 +110,12 @@ $ sudo ufw reload
 ```
 環境によってはルーターのポート転送の設定も必要ですが、ここでは省略。
 
-## 7. strongSwanの起動
+## 5. strongSwanの起動
 ```bash
 $ sudo systemctl start ipsec
 ```
 
-## 8. クライアントの設定
+## 6. クライアントの設定
 Android端末のVPN設定から、タイプを`IKEv2/IPSec PSK`にして設定を入力する。  
 **IPSec IDを空にすると設定の保存ができないので注意する。**
 
