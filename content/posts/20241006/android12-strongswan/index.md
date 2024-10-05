@@ -115,7 +115,7 @@ $ sudo ufw reload
 $ sudo systemctl start ipsec
 ```
 
-## 6. クライアントの設定
+## 8. クライアントの設定
 Android端末のVPN設定から、タイプを`IKEv2/IPSec PSK`にして設定を入力する。  
 **IPSec IDを空にすると設定の保存ができないので注意する。**
 
