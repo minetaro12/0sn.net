@@ -47,8 +47,9 @@ include strongswan.d/*.conf
 connections {
   ikev2psk {
     version = 2
-    local_addrs = <サーバーのIPかFQDN>
+    local_addrs = <サーバーのIPかFQDN> #接続できない場合はプライベートIPや%anyを試す
     remote_addrs = %any
+    pools = pool1
 
     local {
       auth = psk
@@ -63,14 +64,13 @@ connections {
         local_ts = 0.0.0.0/0 #クライアントにアクセスを許可するサブネット
       }
     }
-
-    pools = pool1
   }
 }
 
 pools {
     pool1 {
       addrs = 10.1.0.0/24 #クライアントに割り振るIP範囲
+      #dns = 1.1.1.1,1.0.0.1
     }
 }
 
