@@ -5,7 +5,8 @@ tags: ["linux","android", "ipsec", "strongswan"]
 comments: true
 showToc: true
 ---
-Android12以降では`L2TP/IPSec`が使えなくなったため、まだ残っている`IKEv2/IPSec PSK`で接続できるサーバーをstrongSwanで作るメモ。
+Android12以降では`L2TP/IPSec`が使えなくなったため、まだ残っている`IKEv2/IPSec PSK`で接続できるサーバーをstrongSwanで作るメモ。  
+Ubuntu 24.04で検証を行った。
 
 ## 1. インストール
 インストール時に自動開始するので、ここでは一旦停止する。
