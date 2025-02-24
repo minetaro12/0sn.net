@@ -12,12 +12,12 @@ Arch Linuxで`systemd-nspawn`を使ってみた。
 
 ## 1. イメージのダウンロード
 
-[ここ](https://us.lxd.images.canonical.com/images/)から使いたいディストリの`rootfs.tar.xz`をダウンロードする。  
+[ここ](https://images.linuxcontainers.org/images/)から使いたいディストリの`rootfs.tar.xz`をダウンロードする。  
 その後、ディレクトリを作成しそこに解凍する。(解凍する時は必ずsudoをつけること)  
 今回はUbuntu 22.04をダウンロードした。
 
 ```
-$ curl https://us.lxd.images.canonical.com/images/ubuntu/jammy/amd64/default/20220826_07:42/rootfs.tar.xz -O
+$ curl https://images.linuxcontainers.org/images/ubuntu/jammy/amd64/default/20250222_07%3A42/rootfs.tar.xz -O
 $ mkdir ubuntu
 $ sudo tar xJvf rootfs.tar.xz -C ubuntu
 ```
